@@ -14,7 +14,7 @@
 
 import unittest
 
-from openapi_client.api.resourcesync_api import ResourcesyncApi
+from flightctl.api.resourcesync_api import ResourcesyncApi
 
 
 class TestResourcesyncApi(unittest.TestCase):

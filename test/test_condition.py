@@ -14,7 +14,7 @@
 
 import unittest
 
-from openapi_client.models.condition import Condition
+from flightctl.models.condition import Condition
 
 class TestCondition(unittest.TestCase):
     """Condition unit test stubs"""

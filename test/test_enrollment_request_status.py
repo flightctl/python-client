@@ -14,7 +14,7 @@
 
 import unittest
 
-from openapi_client.models.enrollment_request_status import EnrollmentRequestStatus
+from flightctl.models.enrollment_request_status import EnrollmentRequestStatus
 
 class TestEnrollmentRequestStatus(unittest.TestCase):
     """EnrollmentRequestStatus unit test stubs"""
@@ -37,7 +37,7 @@ class TestEnrollmentRequestStatus(unittest.TestCase):
             return EnrollmentRequestStatus(
                 certificate = '',
                 conditions = [
-                    openapi_client.models.condition.Condition(
+                    flightctl.models.condition.Condition(
                         type = 'Approved', 
                         status = 'True', 
                         observed_generation = 56, 
@@ -45,7 +45,7 @@ class TestEnrollmentRequestStatus(unittest.TestCase):
                         message = '', 
                         reason = '', )
                     ],
-                approval = openapi_client.models.enrollment_request_approval.EnrollmentRequestApproval(
+                approval = flightctl.models.enrollment_request_approval.EnrollmentRequestApproval(
                     labels = {
                         'key' : ''
                         }, 
@@ -56,7 +56,7 @@ class TestEnrollmentRequestStatus(unittest.TestCase):
         else:
             return EnrollmentRequestStatus(
                 conditions = [
-                    openapi_client.models.condition.Condition(
+                    flightctl.models.condition.Condition(
                         type = 'Approved', 
                         status = 'True', 
                         observed_generation = 56, 

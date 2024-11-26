@@ -14,7 +14,7 @@
 
 import unittest
 
-from openapi_client.models.device_spec_systemd import DeviceSpecSystemd
+from flightctl.models.device_spec_systemd import DeviceSpecSystemd
 
 class TestDeviceSpecSystemd(unittest.TestCase):
     """DeviceSpecSystemd unit test stubs"""

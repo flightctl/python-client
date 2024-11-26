@@ -14,7 +14,7 @@
 
 import unittest
 
-from openapi_client.models.enrollment_request_approval import EnrollmentRequestApproval
+from flightctl.models.enrollment_request_approval import EnrollmentRequestApproval
 
 class TestEnrollmentRequestApproval(unittest.TestCase):
     """EnrollmentRequestApproval unit test stubs"""

@@ -14,7 +14,7 @@
 
 import unittest
 
-from openapi_client.models.http_repo_spec import HttpRepoSpec
+from flightctl.models.http_repo_spec import HttpRepoSpec
 
 class TestHttpRepoSpec(unittest.TestCase):
     """HttpRepoSpec unit test stubs"""
@@ -37,7 +37,7 @@ class TestHttpRepoSpec(unittest.TestCase):
             return HttpRepoSpec(
                 url = '',
                 type = 'git',
-                http_config = openapi_client.models.http_config.HttpConfig(
+                http_config = flightctl.models.http_config.HttpConfig(
                     username = '', 
                     password = '', 
                     tls/crt = '', 
@@ -51,7 +51,7 @@ class TestHttpRepoSpec(unittest.TestCase):
             return HttpRepoSpec(
                 url = '',
                 type = 'git',
-                http_config = openapi_client.models.http_config.HttpConfig(
+                http_config = flightctl.models.http_config.HttpConfig(
                     username = '', 
                     password = '', 
                     tls/crt = '', 

@@ -14,7 +14,7 @@
 
 import unittest
 
-from openapi_client.models.device_console import DeviceConsole
+from flightctl.models.device_console import DeviceConsole
 
 class TestDeviceConsole(unittest.TestCase):
     """DeviceConsole unit test stubs"""

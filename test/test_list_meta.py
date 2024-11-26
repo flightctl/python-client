@@ -14,7 +14,7 @@
 
 import unittest
 
-from openapi_client.models.list_meta import ListMeta
+from flightctl.models.list_meta import ListMeta
 
 class TestListMeta(unittest.TestCase):
     """ListMeta unit test stubs"""

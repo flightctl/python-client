@@ -14,7 +14,7 @@
 
 import unittest
 
-from openapi_client.models.fleet_status import FleetStatus
+from flightctl.models.fleet_status import FleetStatus
 
 class TestFleetStatus(unittest.TestCase):
     """FleetStatus unit test stubs"""
@@ -35,10 +35,10 @@ class TestFleetStatus(unittest.TestCase):
         model = FleetStatus()
         if include_optional:
             return FleetStatus(
-                rollout = openapi_client.models.fleet_rollout_status.FleetRolloutStatus(
+                rollout = flightctl.models.fleet_rollout_status.FleetRolloutStatus(
                     current_batch = 56, ),
                 conditions = [
-                    openapi_client.models.condition.Condition(
+                    flightctl.models.condition.Condition(
                         type = 'Approved', 
                         status = 'True', 
                         observed_generation = 56, 
@@ -46,7 +46,7 @@ class TestFleetStatus(unittest.TestCase):
                         message = '', 
                         reason = '', )
                     ],
-                devices_summary = openapi_client.models.devices_summary.DevicesSummary(
+                devices_summary = flightctl.models.devices_summary.DevicesSummary(
                     total = 56, 
                     application_status = {
                         'key' : 56
@@ -61,7 +61,7 @@ class TestFleetStatus(unittest.TestCase):
         else:
             return FleetStatus(
                 conditions = [
-                    openapi_client.models.condition.Condition(
+                    flightctl.models.condition.Condition(
                         type = 'Approved', 
                         status = 'True', 
                         observed_generation = 56, 

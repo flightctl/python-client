@@ -14,7 +14,7 @@
 
 import unittest
 
-from openapi_client.models.status import Status
+from flightctl.models.status import Status
 
 class TestStatus(unittest.TestCase):
     """Status unit test stubs"""

@@ -14,7 +14,7 @@
 
 import unittest
 
-from openapi_client.models.resource_sync_list import ResourceSyncList
+from flightctl.models.resource_sync_list import ResourceSyncList
 
 class TestResourceSyncList(unittest.TestCase):
     """ResourceSyncList unit test stubs"""
@@ -37,14 +37,14 @@ class TestResourceSyncList(unittest.TestCase):
             return ResourceSyncList(
                 api_version = '',
                 kind = '',
-                metadata = openapi_client.models.list_meta.ListMeta(
+                metadata = flightctl.models.list_meta.ListMeta(
                     continue = '', 
                     remaining_item_count = 56, ),
                 items = [
-                    openapi_client.models.resource_sync.ResourceSync(
+                    flightctl.models.resource_sync.ResourceSync(
                         api_version = '', 
                         kind = '', 
-                        metadata = openapi_client.models.object_meta.ObjectMeta(
+                        metadata = flightctl.models.object_meta.ObjectMeta(
                             creation_timestamp = datetime.datetime.strptime('2013-10-20 19:20:30.00', '%Y-%m-%d %H:%M:%S.%f'), 
                             deletion_timestamp = datetime.datetime.strptime('2013-10-20 19:20:30.00', '%Y-%m-%d %H:%M:%S.%f'), 
                             name = '', 
@@ -57,15 +57,15 @@ class TestResourceSyncList(unittest.TestCase):
                                 'key' : ''
                                 }, 
                             resource_version = '', ), 
-                        spec = openapi_client.models.resource_sync_spec.ResourceSyncSpec(
+                        spec = flightctl.models.resource_sync_spec.ResourceSyncSpec(
                             repository = '', 
                             target_revision = '', 
                             path = '', ), 
-                        status = openapi_client.models.resource_sync_status.ResourceSyncStatus(
+                        status = flightctl.models.resource_sync_status.ResourceSyncStatus(
                             observed_commit = '', 
                             observed_generation = 56, 
                             conditions = [
-                                openapi_client.models.condition.Condition(
+                                flightctl.models.condition.Condition(
                                     type = 'Approved', 
                                     status = 'True', 
                                     observed_generation = 56, 
@@ -79,14 +79,14 @@ class TestResourceSyncList(unittest.TestCase):
             return ResourceSyncList(
                 api_version = '',
                 kind = '',
-                metadata = openapi_client.models.list_meta.ListMeta(
+                metadata = flightctl.models.list_meta.ListMeta(
                     continue = '', 
                     remaining_item_count = 56, ),
                 items = [
-                    openapi_client.models.resource_sync.ResourceSync(
+                    flightctl.models.resource_sync.ResourceSync(
                         api_version = '', 
                         kind = '', 
-                        metadata = openapi_client.models.object_meta.ObjectMeta(
+                        metadata = flightctl.models.object_meta.ObjectMeta(
                             creation_timestamp = datetime.datetime.strptime('2013-10-20 19:20:30.00', '%Y-%m-%d %H:%M:%S.%f'), 
                             deletion_timestamp = datetime.datetime.strptime('2013-10-20 19:20:30.00', '%Y-%m-%d %H:%M:%S.%f'), 
                             name = '', 
@@ -99,15 +99,15 @@ class TestResourceSyncList(unittest.TestCase):
                                 'key' : ''
                                 }, 
                             resource_version = '', ), 
-                        spec = openapi_client.models.resource_sync_spec.ResourceSyncSpec(
+                        spec = flightctl.models.resource_sync_spec.ResourceSyncSpec(
                             repository = '', 
                             target_revision = '', 
                             path = '', ), 
-                        status = openapi_client.models.resource_sync_status.ResourceSyncStatus(
+                        status = flightctl.models.resource_sync_status.ResourceSyncStatus(
                             observed_commit = '', 
                             observed_generation = 56, 
                             conditions = [
-                                openapi_client.models.condition.Condition(
+                                flightctl.models.condition.Condition(
                                     type = 'Approved', 
                                     status = 'True', 
                                     observed_generation = 56, 

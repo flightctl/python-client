@@ -14,7 +14,7 @@
 
 import unittest
 
-from openapi_client.models.label_selector import LabelSelector
+from flightctl.models.label_selector import LabelSelector
 
 class TestLabelSelector(unittest.TestCase):
     """LabelSelector unit test stubs"""
@@ -39,7 +39,7 @@ class TestLabelSelector(unittest.TestCase):
                     'key' : ''
                     },
                 match_expressions = [
-                    openapi_client.models.match_expression.MatchExpression(
+                    flightctl.models.match_expression.MatchExpression(
                         key = '', 
                         operator = 'In', 
                         values = [

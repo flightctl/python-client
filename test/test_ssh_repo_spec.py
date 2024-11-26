@@ -14,7 +14,7 @@
 
 import unittest
 
-from openapi_client.models.ssh_repo_spec import SshRepoSpec
+from flightctl.models.ssh_repo_spec import SshRepoSpec
 
 class TestSshRepoSpec(unittest.TestCase):
     """SshRepoSpec unit test stubs"""
@@ -37,7 +37,7 @@ class TestSshRepoSpec(unittest.TestCase):
             return SshRepoSpec(
                 url = '',
                 type = 'git',
-                ssh_config = openapi_client.models.ssh_config.SshConfig(
+                ssh_config = flightctl.models.ssh_config.SshConfig(
                     ssh_private_key = '', 
                     private_key_passphrase = '', 
                     skip_server_verification = True, )
@@ -46,7 +46,7 @@ class TestSshRepoSpec(unittest.TestCase):
             return SshRepoSpec(
                 url = '',
                 type = 'git',
-                ssh_config = openapi_client.models.ssh_config.SshConfig(
+                ssh_config = flightctl.models.ssh_config.SshConfig(
                     ssh_private_key = '', 
                     private_key_passphrase = '', 
                     skip_server_verification = True, ),

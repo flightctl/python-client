@@ -14,7 +14,7 @@
 
 import unittest
 
-from openapi_client.models.enrollment_service import EnrollmentService
+from flightctl.models.enrollment_service import EnrollmentService
 
 class TestEnrollmentService(unittest.TestCase):
     """EnrollmentService unit test stubs"""
@@ -35,20 +35,20 @@ class TestEnrollmentService(unittest.TestCase):
         model = EnrollmentService()
         if include_optional:
             return EnrollmentService(
-                authentication = openapi_client.models.enrollment_service_auth.EnrollmentServiceAuth(
+                authentication = flightctl.models.enrollment_service_auth.EnrollmentServiceAuth(
                     client_certificate_data = '', 
                     client_key_data = '', ),
-                service = openapi_client.models.enrollment_service_service.EnrollmentServiceService(
+                service = flightctl.models.enrollment_service_service.EnrollmentServiceService(
                     certificate_authority_data = '', 
                     server = '', ),
                 enrollment_ui_endpoint = ''
             )
         else:
             return EnrollmentService(
-                authentication = openapi_client.models.enrollment_service_auth.EnrollmentServiceAuth(
+                authentication = flightctl.models.enrollment_service_auth.EnrollmentServiceAuth(
                     client_certificate_data = '', 
                     client_key_data = '', ),
-                service = openapi_client.models.enrollment_service_service.EnrollmentServiceService(
+                service = flightctl.models.enrollment_service_service.EnrollmentServiceService(
                     certificate_authority_data = '', 
                     server = '', ),
                 enrollment_ui_endpoint = '',

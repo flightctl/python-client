@@ -14,7 +14,7 @@
 
 import unittest
 
-from openapi_client.models.git_config_provider_spec import GitConfigProviderSpec
+from flightctl.models.git_config_provider_spec import GitConfigProviderSpec
 
 class TestGitConfigProviderSpec(unittest.TestCase):
     """GitConfigProviderSpec unit test stubs"""
@@ -36,7 +36,7 @@ class TestGitConfigProviderSpec(unittest.TestCase):
         if include_optional:
             return GitConfigProviderSpec(
                 name = '',
-                git_ref = openapi_client.models.git_config_provider_spec_git_ref.GitConfigProviderSpec_gitRef(
+                git_ref = flightctl.models.git_config_provider_spec_git_ref.GitConfigProviderSpec_gitRef(
                     repository = '', 
                     target_revision = '', 
                     path = '', 
@@ -45,7 +45,7 @@ class TestGitConfigProviderSpec(unittest.TestCase):
         else:
             return GitConfigProviderSpec(
                 name = '',
-                git_ref = openapi_client.models.git_config_provider_spec_git_ref.GitConfigProviderSpec_gitRef(
+                git_ref = flightctl.models.git_config_provider_spec_git_ref.GitConfigProviderSpec_gitRef(
                     repository = '', 
                     target_revision = '', 
                     path = '', 

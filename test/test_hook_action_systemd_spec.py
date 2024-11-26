@@ -14,7 +14,7 @@
 
 import unittest
 
-from openapi_client.models.hook_action_systemd_spec import HookActionSystemdSpec
+from flightctl.models.hook_action_systemd_spec import HookActionSystemdSpec
 
 class TestHookActionSystemdSpec(unittest.TestCase):
     """HookActionSystemdSpec unit test stubs"""
@@ -36,7 +36,7 @@ class TestHookActionSystemdSpec(unittest.TestCase):
         if include_optional:
             return HookActionSystemdSpec(
                 timeout = '68072888001528021798096225500h',
-                unit = openapi_client.models.hook_action_systemd_unit.HookActionSystemdUnit(
+                unit = flightctl.models.hook_action_systemd_unit.HookActionSystemdUnit(
                     name = '', 
                     operations = [
                         'Enable'
@@ -45,7 +45,7 @@ class TestHookActionSystemdSpec(unittest.TestCase):
             )
         else:
             return HookActionSystemdSpec(
-                unit = openapi_client.models.hook_action_systemd_unit.HookActionSystemdUnit(
+                unit = flightctl.models.hook_action_systemd_unit.HookActionSystemdUnit(
                     name = '', 
                     operations = [
                         'Enable'

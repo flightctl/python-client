@@ -14,7 +14,7 @@
 
 import unittest
 
-from openapi_client.models.generic_repo_spec import GenericRepoSpec
+from flightctl.models.generic_repo_spec import GenericRepoSpec
 
 class TestGenericRepoSpec(unittest.TestCase):
     """GenericRepoSpec unit test stubs"""

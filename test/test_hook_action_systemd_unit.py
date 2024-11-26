@@ -14,7 +14,7 @@
 
 import unittest
 
-from openapi_client.models.hook_action_systemd_unit import HookActionSystemdUnit
+from flightctl.models.hook_action_systemd_unit import HookActionSystemdUnit
 
 class TestHookActionSystemdUnit(unittest.TestCase):
     """HookActionSystemdUnit unit test stubs"""

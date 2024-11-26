@@ -14,7 +14,7 @@
 
 import unittest
 
-from openapi_client.models.rollout_policy import RolloutPolicy
+from flightctl.models.rollout_policy import RolloutPolicy
 
 class TestRolloutPolicy(unittest.TestCase):
     """RolloutPolicy unit test stubs"""
@@ -35,13 +35,13 @@ class TestRolloutPolicy(unittest.TestCase):
         model = RolloutPolicy()
         if include_optional:
             return RolloutPolicy(
-                disruption_allowance = openapi_client.models.disruption_allowance.DisruptionAllowance(
+                disruption_allowance = flightctl.models.disruption_allowance.DisruptionAllowance(
                     group_by = [
                         ''
                         ], 
                     min_available = 56, 
                     max_unavailable = 56, ),
-                device_selection = openapi_client.models.rollout_device_selection.RolloutDeviceSelection(
+                device_selection = flightctl.models.rollout_device_selection.RolloutDeviceSelection(
                     strategy = '', ),
                 success_threshold = '',
                 default_update_timeout = '68072888001528021798096225500h'

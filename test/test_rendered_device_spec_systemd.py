@@ -14,7 +14,7 @@
 
 import unittest
 
-from openapi_client.models.rendered_device_spec_systemd import RenderedDeviceSpecSystemd
+from flightctl.models.rendered_device_spec_systemd import RenderedDeviceSpecSystemd
 
 class TestRenderedDeviceSpecSystemd(unittest.TestCase):
     """RenderedDeviceSpecSystemd unit test stubs"""

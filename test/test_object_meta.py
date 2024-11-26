@@ -14,7 +14,7 @@
 
 import unittest
 
-from openapi_client.models.object_meta import ObjectMeta
+from flightctl.models.object_meta import ObjectMeta
 
 class TestObjectMeta(unittest.TestCase):
     """ObjectMeta unit test stubs"""

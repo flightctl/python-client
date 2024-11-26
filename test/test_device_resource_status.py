@@ -14,7 +14,7 @@
 
 import unittest
 
-from openapi_client.models.device_resource_status import DeviceResourceStatus
+from flightctl.models.device_resource_status import DeviceResourceStatus
 
 class TestDeviceResourceStatus(unittest.TestCase):
     """DeviceResourceStatus unit test stubs"""

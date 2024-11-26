@@ -14,7 +14,7 @@
 
 import unittest
 
-from openapi_client.models.kubernetes_secret_provider_spec_secret_ref import KubernetesSecretProviderSpecSecretRef
+from flightctl.models.kubernetes_secret_provider_spec_secret_ref import KubernetesSecretProviderSpecSecretRef
 
 class TestKubernetesSecretProviderSpecSecretRef(unittest.TestCase):
     """KubernetesSecretProviderSpecSecretRef unit test stubs"""

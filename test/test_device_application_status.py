@@ -14,7 +14,7 @@
 
 import unittest
 
-from openapi_client.models.device_application_status import DeviceApplicationStatus
+from flightctl.models.device_application_status import DeviceApplicationStatus
 
 class TestDeviceApplicationStatus(unittest.TestCase):
     """DeviceApplicationStatus unit test stubs"""

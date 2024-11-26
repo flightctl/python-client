@@ -14,7 +14,7 @@
 
 import unittest
 
-from openapi_client.models.repository_status import RepositoryStatus
+from flightctl.models.repository_status import RepositoryStatus
 
 class TestRepositoryStatus(unittest.TestCase):
     """RepositoryStatus unit test stubs"""
@@ -36,7 +36,7 @@ class TestRepositoryStatus(unittest.TestCase):
         if include_optional:
             return RepositoryStatus(
                 conditions = [
-                    openapi_client.models.condition.Condition(
+                    flightctl.models.condition.Condition(
                         type = 'Approved', 
                         status = 'True', 
                         observed_generation = 56, 
@@ -48,7 +48,7 @@ class TestRepositoryStatus(unittest.TestCase):
         else:
             return RepositoryStatus(
                 conditions = [
-                    openapi_client.models.condition.Condition(
+                    flightctl.models.condition.Condition(
                         type = 'Approved', 
                         status = 'True', 
                         observed_generation = 56, 

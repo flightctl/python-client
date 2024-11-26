@@ -14,7 +14,7 @@
 
 import unittest
 
-from openapi_client.models.custom_resource_monitor_spec import CustomResourceMonitorSpec
+from flightctl.models.custom_resource_monitor_spec import CustomResourceMonitorSpec
 
 class TestCustomResourceMonitorSpec(unittest.TestCase):
     """CustomResourceMonitorSpec unit test stubs"""
@@ -37,7 +37,7 @@ class TestCustomResourceMonitorSpec(unittest.TestCase):
             return CustomResourceMonitorSpec(
                 monitor_type = '',
                 alert_rules = [
-                    openapi_client.models.resource_alert_rule.ResourceAlertRule(
+                    flightctl.models.resource_alert_rule.ResourceAlertRule(
                         severity = 'Warning', 
                         duration = '4s', 
                         percentage = 1.337, 
@@ -49,7 +49,7 @@ class TestCustomResourceMonitorSpec(unittest.TestCase):
             return CustomResourceMonitorSpec(
                 monitor_type = '',
                 alert_rules = [
-                    openapi_client.models.resource_alert_rule.ResourceAlertRule(
+                    flightctl.models.resource_alert_rule.ResourceAlertRule(
                         severity = 'Warning', 
                         duration = '4s', 
                         percentage = 1.337, 

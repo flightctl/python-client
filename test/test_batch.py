@@ -14,7 +14,7 @@
 
 import unittest
 
-from openapi_client.models.batch import Batch
+from flightctl.models.batch import Batch
 
 class TestBatch(unittest.TestCase):
     """Batch unit test stubs"""
@@ -35,12 +35,12 @@ class TestBatch(unittest.TestCase):
         model = Batch()
         if include_optional:
             return Batch(
-                selector = openapi_client.models.label_selector.LabelSelector(
+                selector = flightctl.models.label_selector.LabelSelector(
                     match_labels = {
                         'key' : ''
                         }, 
                     match_expressions = [
-                        openapi_client.models.match_expression.MatchExpression(
+                        flightctl.models.match_expression.MatchExpression(
                             key = '', 
                             operator = 'In', 
                             values = [

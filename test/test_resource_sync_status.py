@@ -14,7 +14,7 @@
 
 import unittest
 
-from openapi_client.models.resource_sync_status import ResourceSyncStatus
+from flightctl.models.resource_sync_status import ResourceSyncStatus
 
 class TestResourceSyncStatus(unittest.TestCase):
     """ResourceSyncStatus unit test stubs"""
@@ -38,7 +38,7 @@ class TestResourceSyncStatus(unittest.TestCase):
                 observed_commit = '',
                 observed_generation = 56,
                 conditions = [
-                    openapi_client.models.condition.Condition(
+                    flightctl.models.condition.Condition(
                         type = 'Approved', 
                         status = 'True', 
                         observed_generation = 56, 
@@ -50,7 +50,7 @@ class TestResourceSyncStatus(unittest.TestCase):
         else:
             return ResourceSyncStatus(
                 conditions = [
-                    openapi_client.models.condition.Condition(
+                    flightctl.models.condition.Condition(
                         type = 'Approved', 
                         status = 'True', 
                         observed_generation = 56, 

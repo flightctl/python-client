@@ -14,7 +14,7 @@
 
 import unittest
 
-from openapi_client.models.inline_config_provider_spec import InlineConfigProviderSpec
+from flightctl.models.inline_config_provider_spec import InlineConfigProviderSpec
 
 class TestInlineConfigProviderSpec(unittest.TestCase):
     """InlineConfigProviderSpec unit test stubs"""
@@ -37,7 +37,7 @@ class TestInlineConfigProviderSpec(unittest.TestCase):
             return InlineConfigProviderSpec(
                 name = '',
                 inline = [
-                    openapi_client.models.file_spec.FileSpec(
+                    flightctl.models.file_spec.FileSpec(
                         path = '', 
                         content = '', 
                         content_encoding = 'plain', 
@@ -50,7 +50,7 @@ class TestInlineConfigProviderSpec(unittest.TestCase):
             return InlineConfigProviderSpec(
                 name = '',
                 inline = [
-                    openapi_client.models.file_spec.FileSpec(
+                    flightctl.models.file_spec.FileSpec(
                         path = '', 
                         content = '', 
                         content_encoding = 'plain', 

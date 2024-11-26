@@ -14,7 +14,7 @@
 
 import unittest
 
-from openapi_client.api.certificatesigningrequest_api import CertificatesigningrequestApi
+from flightctl.api.certificatesigningrequest_api import CertificatesigningrequestApi
 
 
 class TestCertificatesigningrequestApi(unittest.TestCase):

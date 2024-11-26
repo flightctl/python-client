@@ -14,7 +14,7 @@
 
 import unittest
 
-from openapi_client.models.template_version_list import TemplateVersionList
+from flightctl.models.template_version_list import TemplateVersionList
 
 class TestTemplateVersionList(unittest.TestCase):
     """TemplateVersionList unit test stubs"""
@@ -37,14 +37,14 @@ class TestTemplateVersionList(unittest.TestCase):
             return TemplateVersionList(
                 api_version = '',
                 kind = '',
-                metadata = openapi_client.models.list_meta.ListMeta(
+                metadata = flightctl.models.list_meta.ListMeta(
                     continue = '', 
                     remaining_item_count = 56, ),
                 items = [
-                    openapi_client.models.template_version.TemplateVersion(
+                    flightctl.models.template_version.TemplateVersion(
                         api_version = '', 
                         kind = '', 
-                        metadata = openapi_client.models.object_meta.ObjectMeta(
+                        metadata = flightctl.models.object_meta.ObjectMeta(
                             creation_timestamp = datetime.datetime.strptime('2013-10-20 19:20:30.00', '%Y-%m-%d %H:%M:%S.%f'), 
                             deletion_timestamp = datetime.datetime.strptime('2013-10-20 19:20:30.00', '%Y-%m-%d %H:%M:%S.%f'), 
                             name = '', 
@@ -57,7 +57,7 @@ class TestTemplateVersionList(unittest.TestCase):
                                 'key' : ''
                                 }, 
                             resource_version = '', ), 
-                        spec = openapi_client.models.template_version_spec.TemplateVersionSpec(
+                        spec = flightctl.models.template_version_spec.TemplateVersionSpec(
                             fleet = '', ), 
                         status = null, )
                     ]
@@ -66,14 +66,14 @@ class TestTemplateVersionList(unittest.TestCase):
             return TemplateVersionList(
                 api_version = '',
                 kind = '',
-                metadata = openapi_client.models.list_meta.ListMeta(
+                metadata = flightctl.models.list_meta.ListMeta(
                     continue = '', 
                     remaining_item_count = 56, ),
                 items = [
-                    openapi_client.models.template_version.TemplateVersion(
+                    flightctl.models.template_version.TemplateVersion(
                         api_version = '', 
                         kind = '', 
-                        metadata = openapi_client.models.object_meta.ObjectMeta(
+                        metadata = flightctl.models.object_meta.ObjectMeta(
                             creation_timestamp = datetime.datetime.strptime('2013-10-20 19:20:30.00', '%Y-%m-%d %H:%M:%S.%f'), 
                             deletion_timestamp = datetime.datetime.strptime('2013-10-20 19:20:30.00', '%Y-%m-%d %H:%M:%S.%f'), 
                             name = '', 
@@ -86,7 +86,7 @@ class TestTemplateVersionList(unittest.TestCase):
                                 'key' : ''
                                 }, 
                             resource_version = '', ), 
-                        spec = openapi_client.models.template_version_spec.TemplateVersionSpec(
+                        spec = flightctl.models.template_version_spec.TemplateVersionSpec(
                             fleet = '', ), 
                         status = null, )
                     ],

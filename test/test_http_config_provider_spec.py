@@ -14,7 +14,7 @@
 
 import unittest
 
-from openapi_client.models.http_config_provider_spec import HttpConfigProviderSpec
+from flightctl.models.http_config_provider_spec import HttpConfigProviderSpec
 
 class TestHttpConfigProviderSpec(unittest.TestCase):
     """HttpConfigProviderSpec unit test stubs"""
@@ -36,7 +36,7 @@ class TestHttpConfigProviderSpec(unittest.TestCase):
         if include_optional:
             return HttpConfigProviderSpec(
                 name = '',
-                http_ref = openapi_client.models.http_config_provider_spec_http_ref.HttpConfigProviderSpec_httpRef(
+                http_ref = flightctl.models.http_config_provider_spec_http_ref.HttpConfigProviderSpec_httpRef(
                     repository = '', 
                     suffix = '', 
                     file_path = '', )
@@ -44,7 +44,7 @@ class TestHttpConfigProviderSpec(unittest.TestCase):
         else:
             return HttpConfigProviderSpec(
                 name = '',
-                http_ref = openapi_client.models.http_config_provider_spec_http_ref.HttpConfigProviderSpec_httpRef(
+                http_ref = flightctl.models.http_config_provider_spec_http_ref.HttpConfigProviderSpec_httpRef(
                     repository = '', 
                     suffix = '', 
                     file_path = '', ),

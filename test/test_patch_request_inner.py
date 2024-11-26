@@ -14,7 +14,7 @@
 
 import unittest
 
-from openapi_client.models.patch_request_inner import PatchRequestInner
+from flightctl.models.patch_request_inner import PatchRequestInner
 
 class TestPatchRequestInner(unittest.TestCase):
     """PatchRequestInner unit test stubs"""

@@ -14,7 +14,7 @@
 
 import unittest
 
-from openapi_client.models.rendered_application_spec import RenderedApplicationSpec
+from flightctl.models.rendered_application_spec import RenderedApplicationSpec
 
 class TestRenderedApplicationSpec(unittest.TestCase):
     """RenderedApplicationSpec unit test stubs"""

@@ -14,7 +14,7 @@
 
 import unittest
 
-from openapi_client.models.template_version_spec import TemplateVersionSpec
+from flightctl.models.template_version_spec import TemplateVersionSpec
 
 class TestTemplateVersionSpec(unittest.TestCase):
     """TemplateVersionSpec unit test stubs"""

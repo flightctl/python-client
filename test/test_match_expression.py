@@ -14,7 +14,7 @@
 
 import unittest
 
-from openapi_client.models.match_expression import MatchExpression
+from flightctl.models.match_expression import MatchExpression
 
 class TestMatchExpression(unittest.TestCase):
     """MatchExpression unit test stubs"""

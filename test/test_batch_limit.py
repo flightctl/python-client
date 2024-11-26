@@ -14,7 +14,7 @@
 
 import unittest
 
-from openapi_client.models.batch_limit import BatchLimit
+from flightctl.models.batch_limit import BatchLimit
 
 class TestBatchLimit(unittest.TestCase):
     """BatchLimit unit test stubs"""

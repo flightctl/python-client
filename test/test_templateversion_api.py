@@ -14,7 +14,7 @@
 
 import unittest
 
-from openapi_client.api.templateversion_api import TemplateversionApi
+from flightctl.api.templateversion_api import TemplateversionApi
 
 
 class TestTemplateversionApi(unittest.TestCase):

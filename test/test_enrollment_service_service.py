@@ -14,7 +14,7 @@
 
 import unittest
 
-from openapi_client.models.enrollment_service_service import EnrollmentServiceService
+from flightctl.models.enrollment_service_service import EnrollmentServiceService
 
 class TestEnrollmentServiceService(unittest.TestCase):
     """EnrollmentServiceService unit test stubs"""

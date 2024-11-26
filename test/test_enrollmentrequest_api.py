@@ -14,7 +14,7 @@
 
 import unittest
 
-from openapi_client.api.enrollmentrequest_api import EnrollmentrequestApi
+from flightctl.api.enrollmentrequest_api import EnrollmentrequestApi
 
 
 class TestEnrollmentrequestApi(unittest.TestCase):

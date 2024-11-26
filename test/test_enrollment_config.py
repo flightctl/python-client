@@ -14,7 +14,7 @@
 
 import unittest
 
-from openapi_client.models.enrollment_config import EnrollmentConfig
+from flightctl.models.enrollment_config import EnrollmentConfig
 
 class TestEnrollmentConfig(unittest.TestCase):
     """EnrollmentConfig unit test stubs"""
@@ -35,11 +35,11 @@ class TestEnrollmentConfig(unittest.TestCase):
         model = EnrollmentConfig()
         if include_optional:
             return EnrollmentConfig(
-                enrollment_service = openapi_client.models.enrollment_service.EnrollmentService(
-                    authentication = openapi_client.models.enrollment_service_auth.EnrollmentServiceAuth(
+                enrollment_service = flightctl.models.enrollment_service.EnrollmentService(
+                    authentication = flightctl.models.enrollment_service_auth.EnrollmentServiceAuth(
                         client_certificate_data = '', 
                         client_key_data = '', ), 
-                    service = openapi_client.models.enrollment_service_service.EnrollmentServiceService(
+                    service = flightctl.models.enrollment_service_service.EnrollmentServiceService(
                         certificate_authority_data = '', 
                         server = '', ), 
                     enrollment_ui_endpoint = '', ),
@@ -47,11 +47,11 @@ class TestEnrollmentConfig(unittest.TestCase):
             )
         else:
             return EnrollmentConfig(
-                enrollment_service = openapi_client.models.enrollment_service.EnrollmentService(
-                    authentication = openapi_client.models.enrollment_service_auth.EnrollmentServiceAuth(
+                enrollment_service = flightctl.models.enrollment_service.EnrollmentService(
+                    authentication = flightctl.models.enrollment_service_auth.EnrollmentServiceAuth(
                         client_certificate_data = '', 
                         client_key_data = '', ), 
-                    service = openapi_client.models.enrollment_service_service.EnrollmentServiceService(
+                    service = flightctl.models.enrollment_service_service.EnrollmentServiceService(
                         certificate_authority_data = '', 
                         server = '', ), 
                     enrollment_ui_endpoint = '', ),

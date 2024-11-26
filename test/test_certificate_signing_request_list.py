@@ -14,7 +14,7 @@
 
 import unittest
 
-from openapi_client.models.certificate_signing_request_list import CertificateSigningRequestList
+from flightctl.models.certificate_signing_request_list import CertificateSigningRequestList
 
 class TestCertificateSigningRequestList(unittest.TestCase):
     """CertificateSigningRequestList unit test stubs"""
@@ -37,14 +37,14 @@ class TestCertificateSigningRequestList(unittest.TestCase):
             return CertificateSigningRequestList(
                 api_version = '',
                 kind = '',
-                metadata = openapi_client.models.list_meta.ListMeta(
+                metadata = flightctl.models.list_meta.ListMeta(
                     continue = '', 
                     remaining_item_count = 56, ),
                 items = [
-                    openapi_client.models.certificate_signing_request.CertificateSigningRequest(
+                    flightctl.models.certificate_signing_request.CertificateSigningRequest(
                         api_version = '', 
                         kind = '', 
-                        metadata = openapi_client.models.object_meta.ObjectMeta(
+                        metadata = flightctl.models.object_meta.ObjectMeta(
                             creation_timestamp = datetime.datetime.strptime('2013-10-20 19:20:30.00', '%Y-%m-%d %H:%M:%S.%f'), 
                             deletion_timestamp = datetime.datetime.strptime('2013-10-20 19:20:30.00', '%Y-%m-%d %H:%M:%S.%f'), 
                             name = '', 
@@ -57,7 +57,7 @@ class TestCertificateSigningRequestList(unittest.TestCase):
                                 'key' : ''
                                 }, 
                             resource_version = '', ), 
-                        spec = openapi_client.models.certificate_signing_request_spec.CertificateSigningRequestSpec(
+                        spec = flightctl.models.certificate_signing_request_spec.CertificateSigningRequestSpec(
                             expiration_seconds = 56, 
                             extra = {
                                 'key' : [
@@ -71,7 +71,7 @@ class TestCertificateSigningRequestList(unittest.TestCase):
                                 ''
                                 ], 
                             username = '', ), 
-                        status = openapi_client.models.certificate_signing_request_status.CertificateSigningRequestStatus(
+                        status = flightctl.models.certificate_signing_request_status.CertificateSigningRequestStatus(
                             certificate = 'YQ==', 
                             conditions = [
                                 null
@@ -82,14 +82,14 @@ class TestCertificateSigningRequestList(unittest.TestCase):
             return CertificateSigningRequestList(
                 api_version = '',
                 kind = '',
-                metadata = openapi_client.models.list_meta.ListMeta(
+                metadata = flightctl.models.list_meta.ListMeta(
                     continue = '', 
                     remaining_item_count = 56, ),
                 items = [
-                    openapi_client.models.certificate_signing_request.CertificateSigningRequest(
+                    flightctl.models.certificate_signing_request.CertificateSigningRequest(
                         api_version = '', 
                         kind = '', 
-                        metadata = openapi_client.models.object_meta.ObjectMeta(
+                        metadata = flightctl.models.object_meta.ObjectMeta(
                             creation_timestamp = datetime.datetime.strptime('2013-10-20 19:20:30.00', '%Y-%m-%d %H:%M:%S.%f'), 
                             deletion_timestamp = datetime.datetime.strptime('2013-10-20 19:20:30.00', '%Y-%m-%d %H:%M:%S.%f'), 
                             name = '', 
@@ -102,7 +102,7 @@ class TestCertificateSigningRequestList(unittest.TestCase):
                                 'key' : ''
                                 }, 
                             resource_version = '', ), 
-                        spec = openapi_client.models.certificate_signing_request_spec.CertificateSigningRequestSpec(
+                        spec = flightctl.models.certificate_signing_request_spec.CertificateSigningRequestSpec(
                             expiration_seconds = 56, 
                             extra = {
                                 'key' : [
@@ -116,7 +116,7 @@ class TestCertificateSigningRequestList(unittest.TestCase):
                                 ''
                                 ], 
                             username = '', ), 
-                        status = openapi_client.models.certificate_signing_request_status.CertificateSigningRequestStatus(
+                        status = flightctl.models.certificate_signing_request_status.CertificateSigningRequestStatus(
                             certificate = 'YQ==', 
                             conditions = [
                                 null

@@ -14,7 +14,7 @@
 
 import unittest
 
-from openapi_client.models.ssh_config import SshConfig
+from flightctl.models.ssh_config import SshConfig
 
 class TestSshConfig(unittest.TestCase):
     """SshConfig unit test stubs"""

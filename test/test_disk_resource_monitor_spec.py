@@ -14,7 +14,7 @@
 
 import unittest
 
-from openapi_client.models.disk_resource_monitor_spec import DiskResourceMonitorSpec
+from flightctl.models.disk_resource_monitor_spec import DiskResourceMonitorSpec
 
 class TestDiskResourceMonitorSpec(unittest.TestCase):
     """DiskResourceMonitorSpec unit test stubs"""
@@ -37,7 +37,7 @@ class TestDiskResourceMonitorSpec(unittest.TestCase):
             return DiskResourceMonitorSpec(
                 monitor_type = '',
                 alert_rules = [
-                    openapi_client.models.resource_alert_rule.ResourceAlertRule(
+                    flightctl.models.resource_alert_rule.ResourceAlertRule(
                         severity = 'Warning', 
                         duration = '4s', 
                         percentage = 1.337, 
@@ -50,7 +50,7 @@ class TestDiskResourceMonitorSpec(unittest.TestCase):
             return DiskResourceMonitorSpec(
                 monitor_type = '',
                 alert_rules = [
-                    openapi_client.models.resource_alert_rule.ResourceAlertRule(
+                    flightctl.models.resource_alert_rule.ResourceAlertRule(
                         severity = 'Warning', 
                         duration = '4s', 
                         percentage = 1.337, 

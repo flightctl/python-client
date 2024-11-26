@@ -14,7 +14,7 @@
 
 import unittest
 
-from openapi_client.models.repository import Repository
+from flightctl.models.repository import Repository
 
 class TestRepository(unittest.TestCase):
     """Repository unit test stubs"""
@@ -37,7 +37,7 @@ class TestRepository(unittest.TestCase):
             return Repository(
                 api_version = '',
                 kind = '',
-                metadata = openapi_client.models.object_meta.ObjectMeta(
+                metadata = flightctl.models.object_meta.ObjectMeta(
                     creation_timestamp = datetime.datetime.strptime('2013-10-20 19:20:30.00', '%Y-%m-%d %H:%M:%S.%f'), 
                     deletion_timestamp = datetime.datetime.strptime('2013-10-20 19:20:30.00', '%Y-%m-%d %H:%M:%S.%f'), 
                     name = '', 
@@ -50,10 +50,10 @@ class TestRepository(unittest.TestCase):
                         'key' : ''
                         }, 
                     resource_version = '', ),
-                spec = openapi_client.models.repository_spec.RepositorySpec(),
-                status = openapi_client.models.repository_status.RepositoryStatus(
+                spec = flightctl.models.repository_spec.RepositorySpec(),
+                status = flightctl.models.repository_status.RepositoryStatus(
                     conditions = [
-                        openapi_client.models.condition.Condition(
+                        flightctl.models.condition.Condition(
                             type = 'Approved', 
                             status = 'True', 
                             observed_generation = 56, 
@@ -66,7 +66,7 @@ class TestRepository(unittest.TestCase):
             return Repository(
                 api_version = '',
                 kind = '',
-                metadata = openapi_client.models.object_meta.ObjectMeta(
+                metadata = flightctl.models.object_meta.ObjectMeta(
                     creation_timestamp = datetime.datetime.strptime('2013-10-20 19:20:30.00', '%Y-%m-%d %H:%M:%S.%f'), 
                     deletion_timestamp = datetime.datetime.strptime('2013-10-20 19:20:30.00', '%Y-%m-%d %H:%M:%S.%f'), 
                     name = '', 
