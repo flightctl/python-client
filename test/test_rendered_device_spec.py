@@ -14,7 +14,7 @@
 
 import unittest
 
-from openapi_client.models.rendered_device_spec import RenderedDeviceSpec
+from flightctl.models.rendered_device_spec import RenderedDeviceSpec
 
 class TestRenderedDeviceSpec(unittest.TestCase):
     """RenderedDeviceSpec unit test stubs"""
@@ -36,19 +36,19 @@ class TestRenderedDeviceSpec(unittest.TestCase):
         if include_optional:
             return RenderedDeviceSpec(
                 rendered_version = '',
-                os = openapi_client.models.device_os_spec.DeviceOSSpec(
+                os = flightctl.models.device_os_spec.DeviceOSSpec(
                     image = '', ),
                 config = '',
                 applications = [
-                    openapi_client.models.rendered_application_spec.RenderedApplicationSpec()
+                    flightctl.models.rendered_application_spec.RenderedApplicationSpec()
                     ],
-                hooks = openapi_client.models.device_hooks_spec.DeviceHooksSpec(
+                hooks = flightctl.models.device_hooks_spec.DeviceHooksSpec(
                     before_updating = [
-                        openapi_client.models.device_update_hook_spec.DeviceUpdateHookSpec(
+                        flightctl.models.device_update_hook_spec.DeviceUpdateHookSpec(
                             name = '', 
                             description = '', 
                             actions = [
-                                openapi_client.models.hook_action.HookAction()
+                                flightctl.models.hook_action.HookAction()
                                 ], 
                             on_file = [
                                 'Create'
@@ -56,38 +56,38 @@ class TestRenderedDeviceSpec(unittest.TestCase):
                             path = '', )
                         ], 
                     after_updating = [
-                        openapi_client.models.device_update_hook_spec.DeviceUpdateHookSpec(
+                        flightctl.models.device_update_hook_spec.DeviceUpdateHookSpec(
                             name = '', 
                             description = '', 
                             actions = [
-                                openapi_client.models.hook_action.HookAction()
+                                flightctl.models.hook_action.HookAction()
                                 ], 
                             path = '', )
                         ], 
                     before_rebooting = [
-                        openapi_client.models.device_reboot_hook_spec.DeviceRebootHookSpec(
+                        flightctl.models.device_reboot_hook_spec.DeviceRebootHookSpec(
                             name = '', 
                             description = '', 
                             actions = [
-                                openapi_client.models.hook_action.HookAction()
+                                flightctl.models.hook_action.HookAction()
                                 ], )
                         ], 
                     after_rebooting = [
-                        openapi_client.models.device_reboot_hook_spec.DeviceRebootHookSpec(
+                        flightctl.models.device_reboot_hook_spec.DeviceRebootHookSpec(
                             name = '', 
                             description = '', 
                             actions = [
-                                openapi_client.models.hook_action.HookAction()
+                                flightctl.models.hook_action.HookAction()
                                 ], )
                         ], ),
-                systemd = openapi_client.models.rendered_device_spec_systemd.RenderedDeviceSpec_systemd(
+                systemd = flightctl.models.rendered_device_spec_systemd.RenderedDeviceSpec_systemd(
                     match_patterns = [
                         ''
                         ], ),
                 resources = [
                     null
                     ],
-                console = openapi_client.models.device_console.DeviceConsole(
+                console = flightctl.models.device_console.DeviceConsole(
                     g_rpc_endpoint = '', 
                     session_id = '', )
             )

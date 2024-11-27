@@ -14,7 +14,7 @@
 
 import unittest
 
-from openapi_client.models.enrollment_request_spec import EnrollmentRequestSpec
+from flightctl.models.enrollment_request_spec import EnrollmentRequestSpec
 
 class TestEnrollmentRequestSpec(unittest.TestCase):
     """EnrollmentRequestSpec unit test stubs"""
@@ -36,9 +36,9 @@ class TestEnrollmentRequestSpec(unittest.TestCase):
         if include_optional:
             return EnrollmentRequestSpec(
                 csr = '',
-                device_status = openapi_client.models.device_status.DeviceStatus(
+                device_status = flightctl.models.device_status.DeviceStatus(
                     conditions = [
-                        openapi_client.models.condition.Condition(
+                        flightctl.models.condition.Condition(
                             type = 'Approved', 
                             status = 'True', 
                             observed_generation = 56, 
@@ -46,37 +46,37 @@ class TestEnrollmentRequestSpec(unittest.TestCase):
                             message = '', 
                             reason = '', )
                         ], 
-                    system_info = openapi_client.models.device_system_info.DeviceSystemInfo(
+                    system_info = flightctl.models.device_system_info.DeviceSystemInfo(
                         architecture = '', 
                         boot_id = '', 
                         operating_system = '', ), 
                     applications = [
-                        openapi_client.models.device_application_status.DeviceApplicationStatus(
+                        flightctl.models.device_application_status.DeviceApplicationStatus(
                             name = '', 
                             ready = '', 
                             restarts = 56, 
                             status = 'Preparing', )
                         ], 
-                    applications_summary = openapi_client.models.device_applications_summary_status.DeviceApplicationsSummaryStatus(
+                    applications_summary = flightctl.models.device_applications_summary_status.DeviceApplicationsSummaryStatus(
                         status = 'Healthy', 
                         info = '', ), 
-                    resources = openapi_client.models.device_resource_status.DeviceResourceStatus(
+                    resources = flightctl.models.device_resource_status.DeviceResourceStatus(
                         cpu = 'Healthy', 
                         memory = 'Healthy', 
                         disk = 'Healthy', ), 
-                    integrity = openapi_client.models.device_integrity_status.DeviceIntegrityStatus(
-                        summary = openapi_client.models.device_integrity_status_summary.DeviceIntegrityStatusSummary(
+                    integrity = flightctl.models.device_integrity_status.DeviceIntegrityStatus(
+                        summary = flightctl.models.device_integrity_status_summary.DeviceIntegrityStatusSummary(
                             status = 'Passed', 
                             info = '', ), ), 
-                    config = openapi_client.models.device_config_status.DeviceConfigStatus(
+                    config = flightctl.models.device_config_status.DeviceConfigStatus(
                         rendered_version = '', ), 
-                    os = openapi_client.models.device_os_status.DeviceOSStatus(
+                    os = flightctl.models.device_os_status.DeviceOSStatus(
                         image = '', 
                         image_digest = '', ), 
-                    updated = openapi_client.models.device_updated_status.DeviceUpdatedStatus(
+                    updated = flightctl.models.device_updated_status.DeviceUpdatedStatus(
                         status = 'UpToDate', 
                         info = '', ), 
-                    summary = openapi_client.models.device_summary_status.DeviceSummaryStatus(
+                    summary = flightctl.models.device_summary_status.DeviceSummaryStatus(
                         status = 'Online', 
                         info = '', ), 
                     last_seen = datetime.datetime.strptime('2013-10-20 19:20:30.00', '%Y-%m-%d %H:%M:%S.%f'), ),

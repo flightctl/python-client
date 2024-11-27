@@ -14,7 +14,7 @@
 
 import unittest
 
-from openapi_client.models.disruption_allowance import DisruptionAllowance
+from flightctl.models.disruption_allowance import DisruptionAllowance
 
 class TestDisruptionAllowance(unittest.TestCase):
     """DisruptionAllowance unit test stubs"""

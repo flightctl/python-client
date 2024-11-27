@@ -14,7 +14,7 @@
 
 import unittest
 
-from openapi_client.models.template_version_status import TemplateVersionStatus
+from flightctl.models.template_version_status import TemplateVersionStatus
 
 class TestTemplateVersionStatus(unittest.TestCase):
     """TemplateVersionStatus unit test stubs"""
@@ -35,18 +35,18 @@ class TestTemplateVersionStatus(unittest.TestCase):
         model = TemplateVersionStatus()
         if include_optional:
             return TemplateVersionStatus(
-                os = openapi_client.models.device_os_spec.DeviceOSSpec(
+                os = flightctl.models.device_os_spec.DeviceOSSpec(
                     image = '', ),
                 config = [
                     null
                     ],
-                hooks = openapi_client.models.device_hooks_spec.DeviceHooksSpec(
+                hooks = flightctl.models.device_hooks_spec.DeviceHooksSpec(
                     before_updating = [
-                        openapi_client.models.device_update_hook_spec.DeviceUpdateHookSpec(
+                        flightctl.models.device_update_hook_spec.DeviceUpdateHookSpec(
                             name = '', 
                             description = '', 
                             actions = [
-                                openapi_client.models.hook_action.HookAction()
+                                flightctl.models.hook_action.HookAction()
                                 ], 
                             on_file = [
                                 'Create'
@@ -54,34 +54,34 @@ class TestTemplateVersionStatus(unittest.TestCase):
                             path = '', )
                         ], 
                     after_updating = [
-                        openapi_client.models.device_update_hook_spec.DeviceUpdateHookSpec(
+                        flightctl.models.device_update_hook_spec.DeviceUpdateHookSpec(
                             name = '', 
                             description = '', 
                             actions = [
-                                openapi_client.models.hook_action.HookAction()
+                                flightctl.models.hook_action.HookAction()
                                 ], 
                             path = '', )
                         ], 
                     before_rebooting = [
-                        openapi_client.models.device_reboot_hook_spec.DeviceRebootHookSpec(
+                        flightctl.models.device_reboot_hook_spec.DeviceRebootHookSpec(
                             name = '', 
                             description = '', 
                             actions = [
-                                openapi_client.models.hook_action.HookAction()
+                                flightctl.models.hook_action.HookAction()
                                 ], )
                         ], 
                     after_rebooting = [
-                        openapi_client.models.device_reboot_hook_spec.DeviceRebootHookSpec(
+                        flightctl.models.device_reboot_hook_spec.DeviceRebootHookSpec(
                             name = '', 
                             description = '', 
                             actions = [
-                                openapi_client.models.hook_action.HookAction()
+                                flightctl.models.hook_action.HookAction()
                                 ], )
                         ], ),
                 applications = [
-                    openapi_client.models.application_spec.ApplicationSpec()
+                    flightctl.models.application_spec.ApplicationSpec()
                     ],
-                systemd = openapi_client.models.device_spec_systemd.DeviceSpec_systemd(
+                systemd = flightctl.models.device_spec_systemd.DeviceSpec_systemd(
                     match_patterns = [
                         'ge34w9Wa*CLfoo\\yJX2gCb'
                         ], ),
@@ -90,7 +90,7 @@ class TestTemplateVersionStatus(unittest.TestCase):
                     ],
                 updated_at = datetime.datetime.strptime('2013-10-20 19:20:30.00', '%Y-%m-%d %H:%M:%S.%f'),
                 conditions = [
-                    openapi_client.models.condition.Condition(
+                    flightctl.models.condition.Condition(
                         type = 'Approved', 
                         status = 'True', 
                         observed_generation = 56, 

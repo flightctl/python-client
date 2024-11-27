@@ -14,7 +14,7 @@
 
 import unittest
 
-from openapi_client.models.config_provider_spec import ConfigProviderSpec
+from flightctl.models.config_provider_spec import ConfigProviderSpec
 
 class TestConfigProviderSpec(unittest.TestCase):
     """ConfigProviderSpec unit test stubs"""
@@ -36,17 +36,17 @@ class TestConfigProviderSpec(unittest.TestCase):
         if include_optional:
             return ConfigProviderSpec(
                 name = '',
-                git_ref = openapi_client.models.git_config_provider_spec_git_ref.GitConfigProviderSpec_gitRef(
+                git_ref = flightctl.models.git_config_provider_spec_git_ref.GitConfigProviderSpec_gitRef(
                     repository = '', 
                     target_revision = '', 
                     path = '', 
                     mount_path = '/', ),
-                secret_ref = openapi_client.models.kubernetes_secret_provider_spec_secret_ref.KubernetesSecretProviderSpec_secretRef(
+                secret_ref = flightctl.models.kubernetes_secret_provider_spec_secret_ref.KubernetesSecretProviderSpec_secretRef(
                     name = '', 
                     namespace = '', 
                     mount_path = '', ),
                 inline = [
-                    openapi_client.models.file_spec.FileSpec(
+                    flightctl.models.file_spec.FileSpec(
                         path = '', 
                         content = '', 
                         content_encoding = 'plain', 
@@ -54,7 +54,7 @@ class TestConfigProviderSpec(unittest.TestCase):
                         user = '', 
                         group = '', )
                     ],
-                http_ref = openapi_client.models.http_config_provider_spec_http_ref.HttpConfigProviderSpec_httpRef(
+                http_ref = flightctl.models.http_config_provider_spec_http_ref.HttpConfigProviderSpec_httpRef(
                     repository = '', 
                     suffix = '', 
                     file_path = '', )
@@ -62,17 +62,17 @@ class TestConfigProviderSpec(unittest.TestCase):
         else:
             return ConfigProviderSpec(
                 name = '',
-                git_ref = openapi_client.models.git_config_provider_spec_git_ref.GitConfigProviderSpec_gitRef(
+                git_ref = flightctl.models.git_config_provider_spec_git_ref.GitConfigProviderSpec_gitRef(
                     repository = '', 
                     target_revision = '', 
                     path = '', 
                     mount_path = '/', ),
-                secret_ref = openapi_client.models.kubernetes_secret_provider_spec_secret_ref.KubernetesSecretProviderSpec_secretRef(
+                secret_ref = flightctl.models.kubernetes_secret_provider_spec_secret_ref.KubernetesSecretProviderSpec_secretRef(
                     name = '', 
                     namespace = '', 
                     mount_path = '', ),
                 inline = [
-                    openapi_client.models.file_spec.FileSpec(
+                    flightctl.models.file_spec.FileSpec(
                         path = '', 
                         content = '', 
                         content_encoding = 'plain', 
@@ -80,7 +80,7 @@ class TestConfigProviderSpec(unittest.TestCase):
                         user = '', 
                         group = '', )
                     ],
-                http_ref = openapi_client.models.http_config_provider_spec_http_ref.HttpConfigProviderSpec_httpRef(
+                http_ref = flightctl.models.http_config_provider_spec_http_ref.HttpConfigProviderSpec_httpRef(
                     repository = '', 
                     suffix = '', 
                     file_path = '', ),

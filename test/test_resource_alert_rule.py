@@ -14,7 +14,7 @@
 
 import unittest
 
-from openapi_client.models.resource_alert_rule import ResourceAlertRule
+from flightctl.models.resource_alert_rule import ResourceAlertRule
 
 class TestResourceAlertRule(unittest.TestCase):
     """ResourceAlertRule unit test stubs"""

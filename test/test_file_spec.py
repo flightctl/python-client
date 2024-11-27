@@ -14,7 +14,7 @@
 
 import unittest
 
-from openapi_client.models.file_spec import FileSpec
+from flightctl.models.file_spec import FileSpec
 
 class TestFileSpec(unittest.TestCase):
     """FileSpec unit test stubs"""

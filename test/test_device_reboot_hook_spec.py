@@ -14,7 +14,7 @@
 
 import unittest
 
-from openapi_client.models.device_reboot_hook_spec import DeviceRebootHookSpec
+from flightctl.models.device_reboot_hook_spec import DeviceRebootHookSpec
 
 class TestDeviceRebootHookSpec(unittest.TestCase):
     """DeviceRebootHookSpec unit test stubs"""
@@ -38,13 +38,13 @@ class TestDeviceRebootHookSpec(unittest.TestCase):
                 name = '',
                 description = '',
                 actions = [
-                    openapi_client.models.hook_action.HookAction()
+                    flightctl.models.hook_action.HookAction()
                     ]
             )
         else:
             return DeviceRebootHookSpec(
                 actions = [
-                    openapi_client.models.hook_action.HookAction()
+                    flightctl.models.hook_action.HookAction()
                     ],
         )
         """

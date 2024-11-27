@@ -14,7 +14,7 @@
 
 import unittest
 
-from openapi_client.models.hook_action_executable import HookActionExecutable
+from flightctl.models.hook_action_executable import HookActionExecutable
 
 class TestHookActionExecutable(unittest.TestCase):
     """HookActionExecutable unit test stubs"""

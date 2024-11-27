@@ -14,7 +14,7 @@
 
 import unittest
 
-from openapi_client.models.fleet_rollout_status import FleetRolloutStatus
+from flightctl.models.fleet_rollout_status import FleetRolloutStatus
 
 class TestFleetRolloutStatus(unittest.TestCase):
     """FleetRolloutStatus unit test stubs"""

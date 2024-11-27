@@ -14,7 +14,7 @@
 
 import unittest
 
-from openapi_client.models.application_env_vars import ApplicationEnvVars
+from flightctl.models.application_env_vars import ApplicationEnvVars
 
 class TestApplicationEnvVars(unittest.TestCase):
     """ApplicationEnvVars unit test stubs"""

@@ -14,7 +14,7 @@
 
 import unittest
 
-from openapi_client.models.repository_spec import RepositorySpec
+from flightctl.models.repository_spec import RepositorySpec
 
 class TestRepositorySpec(unittest.TestCase):
     """RepositorySpec unit test stubs"""
@@ -37,7 +37,7 @@ class TestRepositorySpec(unittest.TestCase):
             return RepositorySpec(
                 url = '',
                 type = 'git',
-                http_config = openapi_client.models.http_config.HttpConfig(
+                http_config = flightctl.models.http_config.HttpConfig(
                     username = '', 
                     password = '', 
                     tls/crt = '', 
@@ -46,7 +46,7 @@ class TestRepositorySpec(unittest.TestCase):
                     skip_server_verification = True, 
                     token = '', ),
                 validation_suffix = '',
-                ssh_config = openapi_client.models.ssh_config.SshConfig(
+                ssh_config = flightctl.models.ssh_config.SshConfig(
                     ssh_private_key = '', 
                     private_key_passphrase = '', 
                     skip_server_verification = True, )
@@ -55,7 +55,7 @@ class TestRepositorySpec(unittest.TestCase):
             return RepositorySpec(
                 url = '',
                 type = 'git',
-                http_config = openapi_client.models.http_config.HttpConfig(
+                http_config = flightctl.models.http_config.HttpConfig(
                     username = '', 
                     password = '', 
                     tls/crt = '', 
@@ -63,7 +63,7 @@ class TestRepositorySpec(unittest.TestCase):
                     ca/crt = '', 
                     skip_server_verification = True, 
                     token = '', ),
-                ssh_config = openapi_client.models.ssh_config.SshConfig(
+                ssh_config = flightctl.models.ssh_config.SshConfig(
                     ssh_private_key = '', 
                     private_key_passphrase = '', 
                     skip_server_verification = True, ),

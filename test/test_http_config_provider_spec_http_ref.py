@@ -14,7 +14,7 @@
 
 import unittest
 
-from openapi_client.models.http_config_provider_spec_http_ref import HttpConfigProviderSpecHttpRef
+from flightctl.models.http_config_provider_spec_http_ref import HttpConfigProviderSpecHttpRef
 
 class TestHttpConfigProviderSpecHttpRef(unittest.TestCase):
     """HttpConfigProviderSpecHttpRef unit test stubs"""

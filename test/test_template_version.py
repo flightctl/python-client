@@ -14,7 +14,7 @@
 
 import unittest
 
-from openapi_client.models.template_version import TemplateVersion
+from flightctl.models.template_version import TemplateVersion
 
 class TestTemplateVersion(unittest.TestCase):
     """TemplateVersion unit test stubs"""
@@ -37,7 +37,7 @@ class TestTemplateVersion(unittest.TestCase):
             return TemplateVersion(
                 api_version = '',
                 kind = '',
-                metadata = openapi_client.models.object_meta.ObjectMeta(
+                metadata = flightctl.models.object_meta.ObjectMeta(
                     creation_timestamp = datetime.datetime.strptime('2013-10-20 19:20:30.00', '%Y-%m-%d %H:%M:%S.%f'), 
                     deletion_timestamp = datetime.datetime.strptime('2013-10-20 19:20:30.00', '%Y-%m-%d %H:%M:%S.%f'), 
                     name = '', 
@@ -50,7 +50,7 @@ class TestTemplateVersion(unittest.TestCase):
                         'key' : ''
                         }, 
                     resource_version = '', ),
-                spec = openapi_client.models.template_version_spec.TemplateVersionSpec(
+                spec = flightctl.models.template_version_spec.TemplateVersionSpec(
                     fleet = '', ),
                 status = None
             )
@@ -58,7 +58,7 @@ class TestTemplateVersion(unittest.TestCase):
             return TemplateVersion(
                 api_version = '',
                 kind = '',
-                metadata = openapi_client.models.object_meta.ObjectMeta(
+                metadata = flightctl.models.object_meta.ObjectMeta(
                     creation_timestamp = datetime.datetime.strptime('2013-10-20 19:20:30.00', '%Y-%m-%d %H:%M:%S.%f'), 
                     deletion_timestamp = datetime.datetime.strptime('2013-10-20 19:20:30.00', '%Y-%m-%d %H:%M:%S.%f'), 
                     name = '', 
@@ -71,7 +71,7 @@ class TestTemplateVersion(unittest.TestCase):
                         'key' : ''
                         }, 
                     resource_version = '', ),
-                spec = openapi_client.models.template_version_spec.TemplateVersionSpec(
+                spec = flightctl.models.template_version_spec.TemplateVersionSpec(
                     fleet = '', ),
         )
         """

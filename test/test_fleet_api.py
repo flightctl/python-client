@@ -14,7 +14,7 @@
 
 import unittest
 
-from openapi_client.api.fleet_api import FleetApi
+from flightctl.api.fleet_api import FleetApi
 
 
 class TestFleetApi(unittest.TestCase):

@@ -14,7 +14,7 @@
 
 import unittest
 
-from openapi_client.models.cpu_resource_monitor_spec import CPUResourceMonitorSpec
+from flightctl.models.cpu_resource_monitor_spec import CPUResourceMonitorSpec
 
 class TestCPUResourceMonitorSpec(unittest.TestCase):
     """CPUResourceMonitorSpec unit test stubs"""
@@ -37,7 +37,7 @@ class TestCPUResourceMonitorSpec(unittest.TestCase):
             return CPUResourceMonitorSpec(
                 monitor_type = '',
                 alert_rules = [
-                    openapi_client.models.resource_alert_rule.ResourceAlertRule(
+                    flightctl.models.resource_alert_rule.ResourceAlertRule(
                         severity = 'Warning', 
                         duration = '4s', 
                         percentage = 1.337, 
@@ -49,7 +49,7 @@ class TestCPUResourceMonitorSpec(unittest.TestCase):
             return CPUResourceMonitorSpec(
                 monitor_type = '',
                 alert_rules = [
-                    openapi_client.models.resource_alert_rule.ResourceAlertRule(
+                    flightctl.models.resource_alert_rule.ResourceAlertRule(
                         severity = 'Warning', 
                         duration = '4s', 
                         percentage = 1.337, 

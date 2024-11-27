@@ -14,7 +14,7 @@
 
 import unittest
 
-from openapi_client.api.repository_api import RepositoryApi
+from flightctl.api.repository_api import RepositoryApi
 
 
 class TestRepositoryApi(unittest.TestCase):

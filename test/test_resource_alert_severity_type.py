@@ -14,7 +14,7 @@
 
 import unittest
 
-from openapi_client.models.resource_alert_severity_type import ResourceAlertSeverityType
+from flightctl.models.resource_alert_severity_type import ResourceAlertSeverityType
 
 class TestResourceAlertSeverityType(unittest.TestCase):
     """ResourceAlertSeverityType unit test stubs"""

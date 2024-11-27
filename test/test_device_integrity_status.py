@@ -14,7 +14,7 @@
 
 import unittest
 
-from openapi_client.models.device_integrity_status import DeviceIntegrityStatus
+from flightctl.models.device_integrity_status import DeviceIntegrityStatus
 
 class TestDeviceIntegrityStatus(unittest.TestCase):
     """DeviceIntegrityStatus unit test stubs"""
@@ -35,13 +35,13 @@ class TestDeviceIntegrityStatus(unittest.TestCase):
         model = DeviceIntegrityStatus()
         if include_optional:
             return DeviceIntegrityStatus(
-                summary = openapi_client.models.device_integrity_status_summary.DeviceIntegrityStatusSummary(
+                summary = flightctl.models.device_integrity_status_summary.DeviceIntegrityStatusSummary(
                     status = 'Passed', 
                     info = '', )
             )
         else:
             return DeviceIntegrityStatus(
-                summary = openapi_client.models.device_integrity_status_summary.DeviceIntegrityStatusSummary(
+                summary = flightctl.models.device_integrity_status_summary.DeviceIntegrityStatusSummary(
                     status = 'Passed', 
                     info = '', ),
         )

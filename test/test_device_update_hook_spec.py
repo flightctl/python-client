@@ -14,7 +14,7 @@
 
 import unittest
 
-from openapi_client.models.device_update_hook_spec import DeviceUpdateHookSpec
+from flightctl.models.device_update_hook_spec import DeviceUpdateHookSpec
 
 class TestDeviceUpdateHookSpec(unittest.TestCase):
     """DeviceUpdateHookSpec unit test stubs"""
@@ -38,7 +38,7 @@ class TestDeviceUpdateHookSpec(unittest.TestCase):
                 name = '',
                 description = '',
                 actions = [
-                    openapi_client.models.hook_action.HookAction()
+                    flightctl.models.hook_action.HookAction()
                     ],
                 on_file = [
                     'Create'
@@ -48,7 +48,7 @@ class TestDeviceUpdateHookSpec(unittest.TestCase):
         else:
             return DeviceUpdateHookSpec(
                 actions = [
-                    openapi_client.models.hook_action.HookAction()
+                    flightctl.models.hook_action.HookAction()
                     ],
         )
         """

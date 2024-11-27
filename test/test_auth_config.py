@@ -14,7 +14,7 @@
 
 import unittest
 
-from openapi_client.models.auth_config import AuthConfig
+from flightctl.models.auth_config import AuthConfig
 
 class TestAuthConfig(unittest.TestCase):
     """AuthConfig unit test stubs"""

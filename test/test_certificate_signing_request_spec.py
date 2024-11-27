@@ -14,7 +14,7 @@
 
 import unittest
 
-from openapi_client.models.certificate_signing_request_spec import CertificateSigningRequestSpec
+from flightctl.models.certificate_signing_request_spec import CertificateSigningRequestSpec
 
 class TestCertificateSigningRequestSpec(unittest.TestCase):
     """CertificateSigningRequestSpec unit test stubs"""

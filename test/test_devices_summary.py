@@ -14,7 +14,7 @@
 
 import unittest
 
-from openapi_client.models.devices_summary import DevicesSummary
+from flightctl.models.devices_summary import DevicesSummary
 
 class TestDevicesSummary(unittest.TestCase):
     """DevicesSummary unit test stubs"""

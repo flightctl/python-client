@@ -14,7 +14,7 @@
 
 import unittest
 
-from openapi_client.models.git_config_provider_spec_git_ref import GitConfigProviderSpecGitRef
+from flightctl.models.git_config_provider_spec_git_ref import GitConfigProviderSpecGitRef
 
 class TestGitConfigProviderSpecGitRef(unittest.TestCase):
     """GitConfigProviderSpecGitRef unit test stubs"""

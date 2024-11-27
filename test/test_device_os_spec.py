@@ -14,7 +14,7 @@
 
 import unittest
 
-from openapi_client.models.device_os_spec import DeviceOSSpec
+from flightctl.models.device_os_spec import DeviceOSSpec
 
 class TestDeviceOSSpec(unittest.TestCase):
     """DeviceOSSpec unit test stubs"""

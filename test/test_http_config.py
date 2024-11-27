@@ -14,7 +14,7 @@
 
 import unittest
 
-from openapi_client.models.http_config import HttpConfig
+from flightctl.models.http_config import HttpConfig
 
 class TestHttpConfig(unittest.TestCase):
     """HttpConfig unit test stubs"""

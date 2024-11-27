@@ -14,7 +14,7 @@
 
 import unittest
 
-from openapi_client.models.resource_sync_spec import ResourceSyncSpec
+from flightctl.models.resource_sync_spec import ResourceSyncSpec
 
 class TestResourceSyncSpec(unittest.TestCase):
     """ResourceSyncSpec unit test stubs"""

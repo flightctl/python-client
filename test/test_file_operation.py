@@ -14,7 +14,7 @@
 
 import unittest
 
-from openapi_client.models.file_operation import FileOperation
+from flightctl.models.file_operation import FileOperation
 
 class TestFileOperation(unittest.TestCase):
     """FileOperation unit test stubs"""

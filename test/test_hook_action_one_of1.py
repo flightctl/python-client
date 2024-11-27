@@ -14,7 +14,7 @@
 
 import unittest
 
-from openapi_client.models.hook_action_one_of1 import HookActionOneOf1
+from flightctl.models.hook_action_one_of1 import HookActionOneOf1
 
 class TestHookActionOneOf1(unittest.TestCase):
     """HookActionOneOf1 unit test stubs"""

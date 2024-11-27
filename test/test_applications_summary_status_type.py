@@ -14,7 +14,7 @@
 
 import unittest
 
-from openapi_client.models.applications_summary_status_type import ApplicationsSummaryStatusType
+from flightctl.models.applications_summary_status_type import ApplicationsSummaryStatusType
 
 class TestApplicationsSummaryStatusType(unittest.TestCase):
     """ApplicationsSummaryStatusType unit test stubs"""

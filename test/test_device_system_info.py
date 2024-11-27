@@ -14,7 +14,7 @@
 
 import unittest
 
-from openapi_client.models.device_system_info import DeviceSystemInfo
+from flightctl.models.device_system_info import DeviceSystemInfo
 
 class TestDeviceSystemInfo(unittest.TestCase):
     """DeviceSystemInfo unit test stubs"""

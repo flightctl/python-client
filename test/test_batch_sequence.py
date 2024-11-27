@@ -14,7 +14,7 @@
 
 import unittest
 
-from openapi_client.models.batch_sequence import BatchSequence
+from flightctl.models.batch_sequence import BatchSequence
 
 class TestBatchSequence(unittest.TestCase):
     """BatchSequence unit test stubs"""
@@ -36,13 +36,13 @@ class TestBatchSequence(unittest.TestCase):
         if include_optional:
             return BatchSequence(
                 sequence = [
-                    openapi_client.models.batch.Batch(
-                        selector = openapi_client.models.label_selector.LabelSelector(
+                    flightctl.models.batch.Batch(
+                        selector = flightctl.models.label_selector.LabelSelector(
                             match_labels = {
                                 'key' : ''
                                 }, 
                             match_expressions = [
-                                openapi_client.models.match_expression.MatchExpression(
+                                flightctl.models.match_expression.MatchExpression(
                                     key = '', 
                                     operator = 'In', 
                                     values = [

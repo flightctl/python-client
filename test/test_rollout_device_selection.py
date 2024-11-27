@@ -14,7 +14,7 @@
 
 import unittest
 
-from openapi_client.models.rollout_device_selection import RolloutDeviceSelection
+from flightctl.models.rollout_device_selection import RolloutDeviceSelection
 
 class TestRolloutDeviceSelection(unittest.TestCase):
     """RolloutDeviceSelection unit test stubs"""
@@ -37,13 +37,13 @@ class TestRolloutDeviceSelection(unittest.TestCase):
             return RolloutDeviceSelection(
                 strategy = '',
                 sequence = [
-                    openapi_client.models.batch.Batch(
-                        selector = openapi_client.models.label_selector.LabelSelector(
+                    flightctl.models.batch.Batch(
+                        selector = flightctl.models.label_selector.LabelSelector(
                             match_labels = {
                                 'key' : ''
                                 }, 
                             match_expressions = [
-                                openapi_client.models.match_expression.MatchExpression(
+                                flightctl.models.match_expression.MatchExpression(
                                     key = '', 
                                     operator = 'In', 
                                     values = [

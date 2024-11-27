@@ -14,7 +14,7 @@
 
 import unittest
 
-from openapi_client.models.sort_order import SortOrder
+from flightctl.models.sort_order import SortOrder
 
 class TestSortOrder(unittest.TestCase):
     """SortOrder unit test stubs"""

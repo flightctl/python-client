@@ -14,7 +14,7 @@
 
 import unittest
 
-from openapi_client.models.device_integrity_status_summary import DeviceIntegrityStatusSummary
+from flightctl.models.device_integrity_status_summary import DeviceIntegrityStatusSummary
 
 class TestDeviceIntegrityStatusSummary(unittest.TestCase):
     """DeviceIntegrityStatusSummary unit test stubs"""

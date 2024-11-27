@@ -14,7 +14,7 @@
 
 import unittest
 
-from openapi_client.models.memory_resource_monitor_spec import MemoryResourceMonitorSpec
+from flightctl.models.memory_resource_monitor_spec import MemoryResourceMonitorSpec
 
 class TestMemoryResourceMonitorSpec(unittest.TestCase):
     """MemoryResourceMonitorSpec unit test stubs"""
@@ -37,7 +37,7 @@ class TestMemoryResourceMonitorSpec(unittest.TestCase):
             return MemoryResourceMonitorSpec(
                 monitor_type = '',
                 alert_rules = [
-                    openapi_client.models.resource_alert_rule.ResourceAlertRule(
+                    flightctl.models.resource_alert_rule.ResourceAlertRule(
                         severity = 'Warning', 
                         duration = '4s', 
                         percentage = 1.337, 
@@ -49,7 +49,7 @@ class TestMemoryResourceMonitorSpec(unittest.TestCase):
             return MemoryResourceMonitorSpec(
                 monitor_type = '',
                 alert_rules = [
-                    openapi_client.models.resource_alert_rule.ResourceAlertRule(
+                    flightctl.models.resource_alert_rule.ResourceAlertRule(
                         severity = 'Warning', 
                         duration = '4s', 
                         percentage = 1.337, 

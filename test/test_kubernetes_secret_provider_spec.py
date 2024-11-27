@@ -14,7 +14,7 @@
 
 import unittest
 
-from openapi_client.models.kubernetes_secret_provider_spec import KubernetesSecretProviderSpec
+from flightctl.models.kubernetes_secret_provider_spec import KubernetesSecretProviderSpec
 
 class TestKubernetesSecretProviderSpec(unittest.TestCase):
     """KubernetesSecretProviderSpec unit test stubs"""
@@ -36,7 +36,7 @@ class TestKubernetesSecretProviderSpec(unittest.TestCase):
         if include_optional:
             return KubernetesSecretProviderSpec(
                 name = '',
-                secret_ref = openapi_client.models.kubernetes_secret_provider_spec_secret_ref.KubernetesSecretProviderSpec_secretRef(
+                secret_ref = flightctl.models.kubernetes_secret_provider_spec_secret_ref.KubernetesSecretProviderSpec_secretRef(
                     name = '', 
                     namespace = '', 
                     mount_path = '', )
@@ -44,7 +44,7 @@ class TestKubernetesSecretProviderSpec(unittest.TestCase):
         else:
             return KubernetesSecretProviderSpec(
                 name = '',
-                secret_ref = openapi_client.models.kubernetes_secret_provider_spec_secret_ref.KubernetesSecretProviderSpec_secretRef(
+                secret_ref = flightctl.models.kubernetes_secret_provider_spec_secret_ref.KubernetesSecretProviderSpec_secretRef(
                     name = '', 
                     namespace = '', 
                     mount_path = '', ),

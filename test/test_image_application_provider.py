@@ -14,7 +14,7 @@
 
 import unittest
 
-from openapi_client.models.image_application_provider import ImageApplicationProvider
+from flightctl.models.image_application_provider import ImageApplicationProvider
 
 class TestImageApplicationProvider(unittest.TestCase):
     """ImageApplicationProvider unit test stubs"""

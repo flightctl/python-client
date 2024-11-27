@@ -14,7 +14,7 @@
 
 import unittest
 
-from openapi_client.models.resource_monitor import ResourceMonitor
+from flightctl.models.resource_monitor import ResourceMonitor
 
 class TestResourceMonitor(unittest.TestCase):
     """ResourceMonitor unit test stubs"""
@@ -37,7 +37,7 @@ class TestResourceMonitor(unittest.TestCase):
             return ResourceMonitor(
                 monitor_type = '',
                 alert_rules = [
-                    openapi_client.models.resource_alert_rule.ResourceAlertRule(
+                    flightctl.models.resource_alert_rule.ResourceAlertRule(
                         severity = 'Warning', 
                         duration = '4s', 
                         percentage = 1.337, 
@@ -50,7 +50,7 @@ class TestResourceMonitor(unittest.TestCase):
             return ResourceMonitor(
                 monitor_type = '',
                 alert_rules = [
-                    openapi_client.models.resource_alert_rule.ResourceAlertRule(
+                    flightctl.models.resource_alert_rule.ResourceAlertRule(
                         severity = 'Warning', 
                         duration = '4s', 
                         percentage = 1.337, 
