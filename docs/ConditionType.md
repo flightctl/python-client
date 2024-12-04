@@ -5,13 +5,9 @@
 
 * `APPROVED` (value: `'Approved'`)
 
-* `APPROVED` (value: `'Approved'`)
-
 * `DENIED` (value: `'Denied'`)
 
 * `FAILED` (value: `'Failed'`)
-
-* `ACCESSIBLE` (value: `'Accessible'`)
 
 * `ACCESSIBLE` (value: `'Accessible'`)
 
