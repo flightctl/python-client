@@ -20,29 +20,26 @@ import json
 from pydantic import BaseModel, ConfigDict, Field, StrictStr, field_validator
 from typing import Any, ClassVar, Dict, List, Optional
 from typing_extensions import Annotated
-from flightctl.models.hook_condition import HookCondition
 from typing import Optional, Set
 from typing_extensions import Self
 
-class HookAction(BaseModel):
+class UpdateSchedule(BaseModel):
     """
-    HookAction
+    Defines the schedule for automatic updates, including timing and optional timeout.
     """ # noqa: E501
-    var_if: Optional[List[HookCondition]] = Field(default=None, description="Conditions that must be met for the action to be executed.", alias="if")
-    timeout: Optional[Annotated[str, Field(strict=True)]] = Field(default=None, description="The maximum duration allowed for the action to complete. The duration should be specified as a positive integer followed by a time unit. Supported time units are: - 's' for seconds - 'm' for minutes - 'h' for hours ")
-    run: StrictStr = Field(description="The command to be executed, including any arguments using standard shell syntax. This field supports multiple commands piped together, as if they were executed under a bash -c context.")
-    env_vars: Optional[Dict[str, StrictStr]] = Field(default=None, description="Environment variable key-value pairs, injected during runtime", alias="envVars")
-    work_dir: Optional[StrictStr] = Field(default=None, description="The working directory to be used when running the command.", alias="workDir")
-    __properties: ClassVar[List[str]] = ["if", "timeout", "run", "envVars", "workDir"]
+    time_zone: Optional[StrictStr] = Field(default='Local', description="Time zone identifiers follow the IANA format AREA/LOCATION, where AREA represents a continent or ocean, and LOCATION specifies a particular site within that area.  e.g., America/New_York, Europe/Paris. Only unambiguous 3-character time zones are supported (\"GMT\", \"UTC\"). ", alias="timeZone")
+    at: StrictStr = Field(description="\"Cron expression format for scheduling times. The format is `* * * * *`: - Minutes: `*` matches 0-59. - Hours: `*` matches 0-23. - Day of Month: `*` matches 1-31. - Month: `*` matches 1-12. - Day of Week: `*` matches 0-6.\" Supported operators: - `*`: Matches any value (e.g., `*` in hours matches every hour). - `-`: Range (e.g., `0-8` for 12 AM to 8 AM). - `,`: List (e.g., `1,12` for 1st and 12th minute). - `/`: Step (e.g., `*/12` for every 12th minute). - Single value (e.g., `8` matches the 8th minute).\" example: \"* 0-8,16-23 * * *\" ")
+    start_grace_duration: Optional[Annotated[str, Field(strict=True)]] = Field(default='0s', description="The maximum duration allowed for the action to complete. The duration should be specified as a positive integer followed by a time unit. Supported time units are: - 's' for seconds - 'm' for minutes - 'h' for hours - 'd' for days ", alias="startGraceDuration")
+    __properties: ClassVar[List[str]] = ["timeZone", "at", "startGraceDuration"]
 
-    @field_validator('timeout')
-    def timeout_validate_regular_expression(cls, value):
+    @field_validator('start_grace_duration')
+    def start_grace_duration_validate_regular_expression(cls, value):
         """Validates the regular expression"""
         if value is None:
             return value
 
-        if not re.match(r"^[1-9]\d*[smh]$", value):
-            raise ValueError(r"must validate the regular expression /^[1-9]\d*[smh]$/")
+        if not re.match(r"^[1-9]\d*[smhd]$", value):
+            raise ValueError(r"must validate the regular expression /^[1-9]\d*[smhd]$/")
         return value
 
     model_config = ConfigDict(
@@ -63,7 +60,7 @@ class HookAction(BaseModel):
 
     @classmethod
     def from_json(cls, json_str: str) -> Optional[Self]:
-        """Create an instance of HookAction from a JSON string"""
+        """Create an instance of UpdateSchedule from a JSON string"""
         return cls.from_dict(json.loads(json_str))
 
     def to_dict(self) -> Dict[str, Any]:
@@ -84,18 +81,11 @@ class HookAction(BaseModel):
             exclude=excluded_fields,
             exclude_none=True,
         )
-        # override the default output from pydantic by calling `to_dict()` of each item in var_if (list)
-        _items = []
-        if self.var_if:
-            for _item_var_if in self.var_if:
-                if _item_var_if:
-                    _items.append(_item_var_if.to_dict())
-            _dict['if'] = _items
         return _dict
 
     @classmethod
     def from_dict(cls, obj: Optional[Dict[str, Any]]) -> Optional[Self]:
-        """Create an instance of HookAction from a dict"""
+        """Create an instance of UpdateSchedule from a dict"""
         if obj is None:
             return None
 
@@ -103,11 +93,9 @@ class HookAction(BaseModel):
             return cls.model_validate(obj)
 
         _obj = cls.model_validate({
-            "if": [HookCondition.from_dict(_item) for _item in obj["if"]] if obj.get("if") is not None else None,
-            "timeout": obj.get("timeout"),
-            "run": obj.get("run"),
-            "envVars": obj.get("envVars"),
-            "workDir": obj.get("workDir")
+            "timeZone": obj.get("timeZone") if obj.get("timeZone") is not None else 'Local',
+            "at": obj.get("at"),
+            "startGraceDuration": obj.get("startGraceDuration") if obj.get("startGraceDuration") is not None else '0s'
         })
         return _obj
 

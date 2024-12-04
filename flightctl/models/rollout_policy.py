@@ -32,7 +32,7 @@ class RolloutPolicy(BaseModel):
     disruption_allowance: Optional[DisruptionAllowance] = Field(default=None, alias="disruptionAllowance")
     device_selection: Optional[RolloutDeviceSelection] = Field(default=None, alias="deviceSelection")
     success_threshold: Optional[StrictStr] = Field(default=None, description="Percentage is the string format representing percentage string.", alias="successThreshold")
-    default_update_timeout: Optional[Annotated[str, Field(strict=True)]] = Field(default=None, description="The maximum duration allowed for the action to complete. The duration should be specified as a positive integer followed by a time unit. Supported time units are: - 's' for seconds - 'm' for minutes - 'h' for hours - 'd' for days ", alias="defaultUpdateTimeout")
+    default_update_timeout: Optional[Annotated[str, Field(strict=True)]] = Field(default='0s', description="The maximum duration allowed for the action to complete. The duration should be specified as a positive integer followed by a time unit. Supported time units are: - 's' for seconds - 'm' for minutes - 'h' for hours - 'd' for days ", alias="defaultUpdateTimeout")
     __properties: ClassVar[List[str]] = ["disruptionAllowance", "deviceSelection", "successThreshold", "defaultUpdateTimeout"]
 
     @field_validator('default_update_timeout')
@@ -105,7 +105,7 @@ class RolloutPolicy(BaseModel):
             "disruptionAllowance": DisruptionAllowance.from_dict(obj["disruptionAllowance"]) if obj.get("disruptionAllowance") is not None else None,
             "deviceSelection": RolloutDeviceSelection.from_dict(obj["deviceSelection"]) if obj.get("deviceSelection") is not None else None,
             "successThreshold": obj.get("successThreshold"),
-            "defaultUpdateTimeout": obj.get("defaultUpdateTimeout")
+            "defaultUpdateTimeout": obj.get("defaultUpdateTimeout") if obj.get("defaultUpdateTimeout") is not None else '0s'
         })
         return _obj
 

@@ -37,14 +37,14 @@ from flightctl.models.device_application_status import DeviceApplicationStatus
 from flightctl.models.device_applications_summary_status import DeviceApplicationsSummaryStatus
 from flightctl.models.device_config_status import DeviceConfigStatus
 from flightctl.models.device_console import DeviceConsole
-from flightctl.models.device_hooks_spec import DeviceHooksSpec
+from flightctl.models.device_decommission import DeviceDecommission
 from flightctl.models.device_integrity_status import DeviceIntegrityStatus
 from flightctl.models.device_integrity_status_summary import DeviceIntegrityStatusSummary
 from flightctl.models.device_integrity_status_summary_type import DeviceIntegrityStatusSummaryType
+from flightctl.models.device_lifecycle_hook_type import DeviceLifecycleHookType
 from flightctl.models.device_list import DeviceList
 from flightctl.models.device_os_spec import DeviceOSSpec
 from flightctl.models.device_os_status import DeviceOSStatus
-from flightctl.models.device_reboot_hook_spec import DeviceRebootHookSpec
 from flightctl.models.device_resource_status import DeviceResourceStatus
 from flightctl.models.device_resource_status_type import DeviceResourceStatusType
 from flightctl.models.device_spec import DeviceSpec
@@ -53,7 +53,7 @@ from flightctl.models.device_status import DeviceStatus
 from flightctl.models.device_summary_status import DeviceSummaryStatus
 from flightctl.models.device_summary_status_type import DeviceSummaryStatusType
 from flightctl.models.device_system_info import DeviceSystemInfo
-from flightctl.models.device_update_hook_spec import DeviceUpdateHookSpec
+from flightctl.models.device_update_policy_spec import DeviceUpdatePolicySpec
 from flightctl.models.device_updated_status import DeviceUpdatedStatus
 from flightctl.models.device_updated_status_type import DeviceUpdatedStatusType
 from flightctl.models.devices_summary import DevicesSummary
@@ -81,13 +81,9 @@ from flightctl.models.generic_repo_spec import GenericRepoSpec
 from flightctl.models.git_config_provider_spec import GitConfigProviderSpec
 from flightctl.models.git_config_provider_spec_git_ref import GitConfigProviderSpecGitRef
 from flightctl.models.hook_action import HookAction
-from flightctl.models.hook_action_executable import HookActionExecutable
-from flightctl.models.hook_action_executable_spec import HookActionExecutableSpec
-from flightctl.models.hook_action_one_of import HookActionOneOf
-from flightctl.models.hook_action_one_of1 import HookActionOneOf1
-from flightctl.models.hook_action_spec import HookActionSpec
-from flightctl.models.hook_action_systemd_spec import HookActionSystemdSpec
-from flightctl.models.hook_action_systemd_unit import HookActionSystemdUnit
+from flightctl.models.hook_action_run import HookActionRun
+from flightctl.models.hook_condition import HookCondition
+from flightctl.models.hook_condition_path_op import HookConditionPathOp
 from flightctl.models.http_config import HttpConfig
 from flightctl.models.http_config_provider_spec import HttpConfigProviderSpec
 from flightctl.models.http_config_provider_spec_http_ref import HttpConfigProviderSpecHttpRef
@@ -128,3 +124,4 @@ from flightctl.models.template_version import TemplateVersion
 from flightctl.models.template_version_list import TemplateVersionList
 from flightctl.models.template_version_spec import TemplateVersionSpec
 from flightctl.models.template_version_status import TemplateVersionStatus
+from flightctl.models.update_schedule import UpdateSchedule

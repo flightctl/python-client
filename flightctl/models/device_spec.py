@@ -21,9 +21,9 @@ from pydantic import BaseModel, ConfigDict, Field
 from typing import Any, ClassVar, Dict, List, Optional
 from flightctl.models.application_spec import ApplicationSpec
 from flightctl.models.config_provider_spec import ConfigProviderSpec
-from flightctl.models.device_hooks_spec import DeviceHooksSpec
 from flightctl.models.device_os_spec import DeviceOSSpec
 from flightctl.models.device_spec_systemd import DeviceSpecSystemd
+from flightctl.models.device_update_policy_spec import DeviceUpdatePolicySpec
 from flightctl.models.resource_monitor import ResourceMonitor
 from typing import Optional, Set
 from typing_extensions import Self
@@ -32,13 +32,13 @@ class DeviceSpec(BaseModel):
     """
     DeviceSpec
     """ # noqa: E501
+    update_policy: Optional[DeviceUpdatePolicySpec] = Field(default=None, alias="updatePolicy")
     os: Optional[DeviceOSSpec] = None
     config: Optional[List[ConfigProviderSpec]] = Field(default=None, description="List of config providers.")
-    hooks: Optional[DeviceHooksSpec] = None
     applications: Optional[List[ApplicationSpec]] = Field(default=None, description="List of applications.")
     systemd: Optional[DeviceSpecSystemd] = None
     resources: Optional[List[ResourceMonitor]] = Field(default=None, description="Array of resource monitor configurations.")
-    __properties: ClassVar[List[str]] = ["os", "config", "hooks", "applications", "systemd", "resources"]
+    __properties: ClassVar[List[str]] = ["updatePolicy", "os", "config", "applications", "systemd", "resources"]
 
     model_config = ConfigDict(
         populate_by_name=True,
@@ -79,6 +79,9 @@ class DeviceSpec(BaseModel):
             exclude=excluded_fields,
             exclude_none=True,
         )
+        # override the default output from pydantic by calling `to_dict()` of update_policy
+        if self.update_policy:
+            _dict['updatePolicy'] = self.update_policy.to_dict()
         # override the default output from pydantic by calling `to_dict()` of os
         if self.os:
             _dict['os'] = self.os.to_dict()
@@ -89,9 +92,6 @@ class DeviceSpec(BaseModel):
                 if _item_config:
                     _items.append(_item_config.to_dict())
             _dict['config'] = _items
-        # override the default output from pydantic by calling `to_dict()` of hooks
-        if self.hooks:
-            _dict['hooks'] = self.hooks.to_dict()
         # override the default output from pydantic by calling `to_dict()` of each item in applications (list)
         _items = []
         if self.applications:
@@ -121,9 +121,9 @@ class DeviceSpec(BaseModel):
             return cls.model_validate(obj)
 
         _obj = cls.model_validate({
+            "updatePolicy": DeviceUpdatePolicySpec.from_dict(obj["updatePolicy"]) if obj.get("updatePolicy") is not None else None,
             "os": DeviceOSSpec.from_dict(obj["os"]) if obj.get("os") is not None else None,
             "config": [ConfigProviderSpec.from_dict(_item) for _item in obj["config"]] if obj.get("config") is not None else None,
-            "hooks": DeviceHooksSpec.from_dict(obj["hooks"]) if obj.get("hooks") is not None else None,
             "applications": [ApplicationSpec.from_dict(_item) for _item in obj["applications"]] if obj.get("applications") is not None else None,
             "systemd": DeviceSpecSystemd.from_dict(obj["systemd"]) if obj.get("systemd") is not None else None,
             "resources": [ResourceMonitor.from_dict(_item) for _item in obj["resources"]] if obj.get("resources") is not None else None

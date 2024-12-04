@@ -17,20 +17,19 @@ import pprint
 import re  # noqa: F401
 import json
 
-from pydantic import BaseModel, ConfigDict, Field, StrictInt
+from pydantic import BaseModel, ConfigDict, Field, StrictStr
 from typing import Any, ClassVar, Dict, List
+from flightctl.models.file_operation import FileOperation
 from typing import Optional, Set
 from typing_extensions import Self
 
-class DevicesSummary(BaseModel):
+class HookConditionPathOp(BaseModel):
     """
-    A summary of the devices in the fleet returned when fetching a single Fleet.
+    HookConditionPathOp
     """ # noqa: E501
-    total: StrictInt = Field(description="The total number of devices in the fleet.")
-    application_status: Dict[str, StrictInt] = Field(description="A breakdown of the devices in the fleet by \"application\" status.", alias="applicationStatus")
-    summary_status: Dict[str, StrictInt] = Field(description="A breakdown of the devices in the fleet by \"summary\" status.", alias="summaryStatus")
-    update_status: Dict[str, StrictInt] = Field(description="A breakdown of the devices in the fleet by \"updated\" status.", alias="updateStatus")
-    __properties: ClassVar[List[str]] = ["total", "applicationStatus", "summaryStatus", "updateStatus"]
+    path: StrictStr = Field(description="The absolute path to a file or directory that must have changed as condition for the action to be performed.")
+    op: List[FileOperation] = Field(description="The operation(s) on files at or below the path that satisfy the path condition.")
+    __properties: ClassVar[List[str]] = ["path", "op"]
 
     model_config = ConfigDict(
         populate_by_name=True,
@@ -50,7 +49,7 @@ class DevicesSummary(BaseModel):
 
     @classmethod
     def from_json(cls, json_str: str) -> Optional[Self]:
-        """Create an instance of DevicesSummary from a JSON string"""
+        """Create an instance of HookConditionPathOp from a JSON string"""
         return cls.from_dict(json.loads(json_str))
 
     def to_dict(self) -> Dict[str, Any]:
@@ -75,7 +74,7 @@ class DevicesSummary(BaseModel):
 
     @classmethod
     def from_dict(cls, obj: Optional[Dict[str, Any]]) -> Optional[Self]:
-        """Create an instance of DevicesSummary from a dict"""
+        """Create an instance of HookConditionPathOp from a dict"""
         if obj is None:
             return None
 
@@ -83,10 +82,8 @@ class DevicesSummary(BaseModel):
             return cls.model_validate(obj)
 
         _obj = cls.model_validate({
-            "total": obj.get("total"),
-            "applicationStatus": obj.get("applicationStatus"),
-            "summaryStatus": obj.get("summaryStatus"),
-            "updateStatus": obj.get("updateStatus")
+            "path": obj.get("path"),
+            "op": obj.get("op")
         })
         return _obj
 

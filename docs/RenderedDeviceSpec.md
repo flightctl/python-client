@@ -6,10 +6,10 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **rendered_version** | **str** |  | 
+**update_policy** | [**DeviceUpdatePolicySpec**](DeviceUpdatePolicySpec.md) |  | [optional] 
 **os** | [**DeviceOSSpec**](DeviceOSSpec.md) |  | [optional] 
 **config** | **str** |  | [optional] 
 **applications** | [**List[RenderedApplicationSpec]**](RenderedApplicationSpec.md) |  | [optional] 
-**hooks** | [**DeviceHooksSpec**](DeviceHooksSpec.md) |  | [optional] 
 **systemd** | [**RenderedDeviceSpecSystemd**](RenderedDeviceSpecSystemd.md) |  | [optional] 
 **resources** | [**List[ResourceMonitor]**](ResourceMonitor.md) | Array of resource monitor configurations. | [optional] 
 **console** | [**DeviceConsole**](DeviceConsole.md) |  | [optional] 

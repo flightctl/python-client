@@ -1,10 +1,11 @@
 # flightctl.DeviceApi
 
-All URIs are relative to *http://localhost*
+All URIs are relative to *https://raw.githubusercontent.com*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
 [**create_device**](DeviceApi.md#create_device) | **POST** /api/v1/devices | 
+[**decommission_device**](DeviceApi.md#decommission_device) | **PUT** /api/v1/devices/{name}/decommission | 
 [**delete_device**](DeviceApi.md#delete_device) | **DELETE** /api/v1/devices/{name} | 
 [**delete_devices**](DeviceApi.md#delete_devices) | **DELETE** /api/v1/devices | 
 [**get_rendered_device_spec**](DeviceApi.md#get_rendered_device_spec) | **GET** /api/v1/devices/{name}/rendered | 
@@ -33,10 +34,10 @@ from flightctl.models.device import Device
 from flightctl.rest import ApiException
 from pprint import pprint
 
-# Defining the host is optional and defaults to http://localhost
+# Defining the host is optional and defaults to https://raw.githubusercontent.com
 # See configuration.py for a list of all supported configuration parameters.
 configuration = flightctl.Configuration(
-    host = "http://localhost"
+    host = "https://raw.githubusercontent.com"
 )
 
 
@@ -87,6 +88,79 @@ No authorization required
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
+# **decommission_device**
+> Device decommission_device(name, device_decommission)
+
+
+
+schedule the device to decommission
+
+### Example
+
+
+```python
+import flightctl
+from flightctl.models.device import Device
+from flightctl.models.device_decommission import DeviceDecommission
+from flightctl.rest import ApiException
+from pprint import pprint
+
+# Defining the host is optional and defaults to https://raw.githubusercontent.com
+# See configuration.py for a list of all supported configuration parameters.
+configuration = flightctl.Configuration(
+    host = "https://raw.githubusercontent.com"
+)
+
+
+# Enter a context with an instance of the API client
+with flightctl.ApiClient(configuration) as api_client:
+    # Create an instance of the API class
+    api_instance = flightctl.DeviceApi(api_client)
+    name = 'name_example' # str | name of the Device
+    device_decommission = flightctl.DeviceDecommission() # DeviceDecommission | 
+
+    try:
+        api_response = api_instance.decommission_device(name, device_decommission)
+        print("The response of DeviceApi->decommission_device:\n")
+        pprint(api_response)
+    except Exception as e:
+        print("Exception when calling DeviceApi->decommission_device: %s\n" % e)
+```
+
+
+
+### Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **name** | **str**| name of the Device | 
+ **device_decommission** | [**DeviceDecommission**](DeviceDecommission.md)|  | 
+
+### Return type
+
+[**Device**](Device.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
+ - **Accept**: application/json
+
+### HTTP response details
+
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**200** | OK |  -  |
+**400** | Bad Request |  -  |
+**401** | Unauthorized |  -  |
+**404** | NotFound |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
 # **delete_device**
 > Device delete_device(name)
 
@@ -103,10 +177,10 @@ from flightctl.models.device import Device
 from flightctl.rest import ApiException
 from pprint import pprint
 
-# Defining the host is optional and defaults to http://localhost
+# Defining the host is optional and defaults to https://raw.githubusercontent.com
 # See configuration.py for a list of all supported configuration parameters.
 configuration = flightctl.Configuration(
-    host = "http://localhost"
+    host = "https://raw.githubusercontent.com"
 )
 
 
@@ -172,10 +246,10 @@ from flightctl.models.status import Status
 from flightctl.rest import ApiException
 from pprint import pprint
 
-# Defining the host is optional and defaults to http://localhost
+# Defining the host is optional and defaults to https://raw.githubusercontent.com
 # See configuration.py for a list of all supported configuration parameters.
 configuration = flightctl.Configuration(
-    host = "http://localhost"
+    host = "https://raw.githubusercontent.com"
 )
 
 
@@ -236,10 +310,10 @@ from flightctl.models.rendered_device_spec import RenderedDeviceSpec
 from flightctl.rest import ApiException
 from pprint import pprint
 
-# Defining the host is optional and defaults to http://localhost
+# Defining the host is optional and defaults to https://raw.githubusercontent.com
 # See configuration.py for a list of all supported configuration parameters.
 configuration = flightctl.Configuration(
-    host = "http://localhost"
+    host = "https://raw.githubusercontent.com"
 )
 
 
@@ -310,10 +384,10 @@ from flightctl.models.sort_order import SortOrder
 from flightctl.rest import ApiException
 from pprint import pprint
 
-# Defining the host is optional and defaults to http://localhost
+# Defining the host is optional and defaults to https://raw.githubusercontent.com
 # See configuration.py for a list of all supported configuration parameters.
 configuration = flightctl.Configuration(
-    host = "http://localhost"
+    host = "https://raw.githubusercontent.com"
 )
 
 
@@ -397,10 +471,10 @@ from flightctl.models.patch_request_inner import PatchRequestInner
 from flightctl.rest import ApiException
 from pprint import pprint
 
-# Defining the host is optional and defaults to http://localhost
+# Defining the host is optional and defaults to https://raw.githubusercontent.com
 # See configuration.py for a list of all supported configuration parameters.
 configuration = flightctl.Configuration(
-    host = "http://localhost"
+    host = "https://raw.githubusercontent.com"
 )
 
 
@@ -470,10 +544,10 @@ from flightctl.models.device import Device
 from flightctl.rest import ApiException
 from pprint import pprint
 
-# Defining the host is optional and defaults to http://localhost
+# Defining the host is optional and defaults to https://raw.githubusercontent.com
 # See configuration.py for a list of all supported configuration parameters.
 configuration = flightctl.Configuration(
-    host = "http://localhost"
+    host = "https://raw.githubusercontent.com"
 )
 
 
@@ -539,10 +613,10 @@ from flightctl.models.device import Device
 from flightctl.rest import ApiException
 from pprint import pprint
 
-# Defining the host is optional and defaults to http://localhost
+# Defining the host is optional and defaults to https://raw.githubusercontent.com
 # See configuration.py for a list of all supported configuration parameters.
 configuration = flightctl.Configuration(
-    host = "http://localhost"
+    host = "https://raw.githubusercontent.com"
 )
 
 
@@ -608,10 +682,10 @@ from flightctl.models.device import Device
 from flightctl.rest import ApiException
 from pprint import pprint
 
-# Defining the host is optional and defaults to http://localhost
+# Defining the host is optional and defaults to https://raw.githubusercontent.com
 # See configuration.py for a list of all supported configuration parameters.
 configuration = flightctl.Configuration(
-    host = "http://localhost"
+    host = "https://raw.githubusercontent.com"
 )
 
 
@@ -682,10 +756,10 @@ from flightctl.models.device import Device
 from flightctl.rest import ApiException
 from pprint import pprint
 
-# Defining the host is optional and defaults to http://localhost
+# Defining the host is optional and defaults to https://raw.githubusercontent.com
 # See configuration.py for a list of all supported configuration parameters.
 configuration = flightctl.Configuration(
-    host = "http://localhost"
+    host = "https://raw.githubusercontent.com"
 )
 
 
@@ -754,10 +828,10 @@ from flightctl.models.device_console import DeviceConsole
 from flightctl.rest import ApiException
 from pprint import pprint
 
-# Defining the host is optional and defaults to http://localhost
+# Defining the host is optional and defaults to https://raw.githubusercontent.com
 # See configuration.py for a list of all supported configuration parameters.
 configuration = flightctl.Configuration(
-    host = "http://localhost"
+    host = "https://raw.githubusercontent.com"
 )
 
 

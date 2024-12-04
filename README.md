@@ -55,10 +55,10 @@ import flightctl
 from flightctl.rest import ApiException
 from pprint import pprint
 
-# Defining the host is optional and defaults to http://localhost
+# Defining the host is optional and defaults to https://raw.githubusercontent.com
 # See configuration.py for a list of all supported configuration parameters.
 configuration = flightctl.Configuration(
-    host = "http://localhost"
+    host = "https://raw.githubusercontent.com"
 )
 
 
@@ -80,7 +80,7 @@ with flightctl.ApiClient(configuration) as api_client:
 
 ## Documentation for API Endpoints
 
-All URIs are relative to *http://localhost*
+All URIs are relative to *https://raw.githubusercontent.com*
 
 Class | Method | HTTP request | Description
 ------------ | ------------- | ------------- | -------------
@@ -96,6 +96,7 @@ Class | Method | HTTP request | Description
 *DefaultApi* | [**auth_validate**](docs/DefaultApi.md#auth_validate) | **GET** /api/v1/auth/validate | 
 *DefaultApi* | [**deny_certificate_signing_request**](docs/DefaultApi.md#deny_certificate_signing_request) | **DELETE** /api/v1/certificatesigningrequests/{name}/approval | 
 *DeviceApi* | [**create_device**](docs/DeviceApi.md#create_device) | **POST** /api/v1/devices | 
+*DeviceApi* | [**decommission_device**](docs/DeviceApi.md#decommission_device) | **PUT** /api/v1/devices/{name}/decommission | 
 *DeviceApi* | [**delete_device**](docs/DeviceApi.md#delete_device) | **DELETE** /api/v1/devices/{name} | 
 *DeviceApi* | [**delete_devices**](docs/DeviceApi.md#delete_devices) | **DELETE** /api/v1/devices | 
 *DeviceApi* | [**get_rendered_device_spec**](docs/DeviceApi.md#get_rendered_device_spec) | **GET** /api/v1/devices/{name}/rendered | 
@@ -170,14 +171,14 @@ Class | Method | HTTP request | Description
  - [DeviceApplicationsSummaryStatus](docs/DeviceApplicationsSummaryStatus.md)
  - [DeviceConfigStatus](docs/DeviceConfigStatus.md)
  - [DeviceConsole](docs/DeviceConsole.md)
- - [DeviceHooksSpec](docs/DeviceHooksSpec.md)
+ - [DeviceDecommission](docs/DeviceDecommission.md)
  - [DeviceIntegrityStatus](docs/DeviceIntegrityStatus.md)
  - [DeviceIntegrityStatusSummary](docs/DeviceIntegrityStatusSummary.md)
  - [DeviceIntegrityStatusSummaryType](docs/DeviceIntegrityStatusSummaryType.md)
+ - [DeviceLifecycleHookType](docs/DeviceLifecycleHookType.md)
  - [DeviceList](docs/DeviceList.md)
  - [DeviceOSSpec](docs/DeviceOSSpec.md)
  - [DeviceOSStatus](docs/DeviceOSStatus.md)
- - [DeviceRebootHookSpec](docs/DeviceRebootHookSpec.md)
  - [DeviceResourceStatus](docs/DeviceResourceStatus.md)
  - [DeviceResourceStatusType](docs/DeviceResourceStatusType.md)
  - [DeviceSpec](docs/DeviceSpec.md)
@@ -186,7 +187,7 @@ Class | Method | HTTP request | Description
  - [DeviceSummaryStatus](docs/DeviceSummaryStatus.md)
  - [DeviceSummaryStatusType](docs/DeviceSummaryStatusType.md)
  - [DeviceSystemInfo](docs/DeviceSystemInfo.md)
- - [DeviceUpdateHookSpec](docs/DeviceUpdateHookSpec.md)
+ - [DeviceUpdatePolicySpec](docs/DeviceUpdatePolicySpec.md)
  - [DeviceUpdatedStatus](docs/DeviceUpdatedStatus.md)
  - [DeviceUpdatedStatusType](docs/DeviceUpdatedStatusType.md)
  - [DevicesSummary](docs/DevicesSummary.md)
@@ -214,13 +215,9 @@ Class | Method | HTTP request | Description
  - [GitConfigProviderSpec](docs/GitConfigProviderSpec.md)
  - [GitConfigProviderSpecGitRef](docs/GitConfigProviderSpecGitRef.md)
  - [HookAction](docs/HookAction.md)
- - [HookActionExecutable](docs/HookActionExecutable.md)
- - [HookActionExecutableSpec](docs/HookActionExecutableSpec.md)
- - [HookActionOneOf](docs/HookActionOneOf.md)
- - [HookActionOneOf1](docs/HookActionOneOf1.md)
- - [HookActionSpec](docs/HookActionSpec.md)
- - [HookActionSystemdSpec](docs/HookActionSystemdSpec.md)
- - [HookActionSystemdUnit](docs/HookActionSystemdUnit.md)
+ - [HookActionRun](docs/HookActionRun.md)
+ - [HookCondition](docs/HookCondition.md)
+ - [HookConditionPathOp](docs/HookConditionPathOp.md)
  - [HttpConfig](docs/HttpConfig.md)
  - [HttpConfigProviderSpec](docs/HttpConfigProviderSpec.md)
  - [HttpConfigProviderSpecHttpRef](docs/HttpConfigProviderSpecHttpRef.md)
@@ -261,6 +258,7 @@ Class | Method | HTTP request | Description
  - [TemplateVersionList](docs/TemplateVersionList.md)
  - [TemplateVersionSpec](docs/TemplateVersionSpec.md)
  - [TemplateVersionStatus](docs/TemplateVersionStatus.md)
+ - [UpdateSchedule](docs/UpdateSchedule.md)
 
 
 <a id="documentation-for-authorization"></a>

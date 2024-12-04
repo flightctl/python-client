@@ -1,6 +1,6 @@
 # flightctl.DefaultApi
 
-All URIs are relative to *http://localhost*
+All URIs are relative to *https://raw.githubusercontent.com*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
@@ -26,10 +26,10 @@ from flightctl.models.certificate_signing_request import CertificateSigningReque
 from flightctl.rest import ApiException
 from pprint import pprint
 
-# Defining the host is optional and defaults to http://localhost
+# Defining the host is optional and defaults to https://raw.githubusercontent.com
 # See configuration.py for a list of all supported configuration parameters.
 configuration = flightctl.Configuration(
-    host = "http://localhost"
+    host = "https://raw.githubusercontent.com"
 )
 
 
@@ -98,10 +98,10 @@ from flightctl.models.auth_config import AuthConfig
 from flightctl.rest import ApiException
 from pprint import pprint
 
-# Defining the host is optional and defaults to http://localhost
+# Defining the host is optional and defaults to https://raw.githubusercontent.com
 # See configuration.py for a list of all supported configuration parameters.
 configuration = flightctl.Configuration(
-    host = "http://localhost"
+    host = "https://raw.githubusercontent.com"
 )
 
 
@@ -161,10 +161,10 @@ import flightctl
 from flightctl.rest import ApiException
 from pprint import pprint
 
-# Defining the host is optional and defaults to http://localhost
+# Defining the host is optional and defaults to https://raw.githubusercontent.com
 # See configuration.py for a list of all supported configuration parameters.
 configuration = flightctl.Configuration(
-    host = "http://localhost"
+    host = "https://raw.githubusercontent.com"
 )
 
 
@@ -229,10 +229,10 @@ from flightctl.models.certificate_signing_request import CertificateSigningReque
 from flightctl.rest import ApiException
 from pprint import pprint
 
-# Defining the host is optional and defaults to http://localhost
+# Defining the host is optional and defaults to https://raw.githubusercontent.com
 # See configuration.py for a list of all supported configuration parameters.
 configuration = flightctl.Configuration(
-    host = "http://localhost"
+    host = "https://raw.githubusercontent.com"
 )
 
 

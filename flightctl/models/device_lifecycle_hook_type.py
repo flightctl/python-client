@@ -18,31 +18,22 @@ from enum import Enum
 from typing_extensions import Self
 
 
-class ConditionType(str, Enum):
+class DeviceLifecycleHookType(str, Enum):
     """
-    ConditionType
+    DeviceLifecycleHookType
     """
 
     """
     allowed enum values
     """
-    APPROVED = 'Approved'
-    APPROVED = 'Approved'
-    DENIED = 'Denied'
-    FAILED = 'Failed'
-    ACCESSIBLE = 'Accessible'
-    ACCESSIBLE = 'Accessible'
-    RESOURCEPARSED = 'ResourceParsed'
-    SYNCED = 'Synced'
-    OVERLAPPINGSELECTORS = 'OverlappingSelectors'
-    VALID = 'Valid'
-    UPDATING = 'Updating'
-    SPECVALID = 'SpecValid'
-    MULTIPLEOWNERS = 'MultipleOwners'
+    BEFOREUPDATING = 'BeforeUpdating'
+    AFTERUPDATING = 'AfterUpdating'
+    BEFOREREBOOTING = 'BeforeRebooting'
+    AFTERREBOOTING = 'AfterRebooting'
 
     @classmethod
     def from_json(cls, json_str: str) -> Self:
-        """Create an instance of ConditionType from a JSON string"""
+        """Create an instance of DeviceLifecycleHookType from a JSON string"""
         return cls(json.loads(json_str))
 
 

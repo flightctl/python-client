@@ -20,8 +20,8 @@ import json
 from pydantic import BaseModel, ConfigDict, Field, StrictStr
 from typing import Any, ClassVar, Dict, List, Optional
 from flightctl.models.device_console import DeviceConsole
-from flightctl.models.device_hooks_spec import DeviceHooksSpec
 from flightctl.models.device_os_spec import DeviceOSSpec
+from flightctl.models.device_update_policy_spec import DeviceUpdatePolicySpec
 from flightctl.models.rendered_application_spec import RenderedApplicationSpec
 from flightctl.models.rendered_device_spec_systemd import RenderedDeviceSpecSystemd
 from flightctl.models.resource_monitor import ResourceMonitor
@@ -33,14 +33,14 @@ class RenderedDeviceSpec(BaseModel):
     RenderedDeviceSpec
     """ # noqa: E501
     rendered_version: StrictStr = Field(alias="renderedVersion")
+    update_policy: Optional[DeviceUpdatePolicySpec] = Field(default=None, alias="updatePolicy")
     os: Optional[DeviceOSSpec] = None
     config: Optional[StrictStr] = None
     applications: Optional[List[RenderedApplicationSpec]] = None
-    hooks: Optional[DeviceHooksSpec] = None
     systemd: Optional[RenderedDeviceSpecSystemd] = None
     resources: Optional[List[ResourceMonitor]] = Field(default=None, description="Array of resource monitor configurations.")
     console: Optional[DeviceConsole] = None
-    __properties: ClassVar[List[str]] = ["renderedVersion", "os", "config", "applications", "hooks", "systemd", "resources", "console"]
+    __properties: ClassVar[List[str]] = ["renderedVersion", "updatePolicy", "os", "config", "applications", "systemd", "resources", "console"]
 
     model_config = ConfigDict(
         populate_by_name=True,
@@ -81,6 +81,9 @@ class RenderedDeviceSpec(BaseModel):
             exclude=excluded_fields,
             exclude_none=True,
         )
+        # override the default output from pydantic by calling `to_dict()` of update_policy
+        if self.update_policy:
+            _dict['updatePolicy'] = self.update_policy.to_dict()
         # override the default output from pydantic by calling `to_dict()` of os
         if self.os:
             _dict['os'] = self.os.to_dict()
@@ -91,9 +94,6 @@ class RenderedDeviceSpec(BaseModel):
                 if _item_applications:
                     _items.append(_item_applications.to_dict())
             _dict['applications'] = _items
-        # override the default output from pydantic by calling `to_dict()` of hooks
-        if self.hooks:
-            _dict['hooks'] = self.hooks.to_dict()
         # override the default output from pydantic by calling `to_dict()` of systemd
         if self.systemd:
             _dict['systemd'] = self.systemd.to_dict()
@@ -120,10 +120,10 @@ class RenderedDeviceSpec(BaseModel):
 
         _obj = cls.model_validate({
             "renderedVersion": obj.get("renderedVersion"),
+            "updatePolicy": DeviceUpdatePolicySpec.from_dict(obj["updatePolicy"]) if obj.get("updatePolicy") is not None else None,
             "os": DeviceOSSpec.from_dict(obj["os"]) if obj.get("os") is not None else None,
             "config": obj.get("config"),
             "applications": [RenderedApplicationSpec.from_dict(_item) for _item in obj["applications"]] if obj.get("applications") is not None else None,
-            "hooks": DeviceHooksSpec.from_dict(obj["hooks"]) if obj.get("hooks") is not None else None,
             "systemd": RenderedDeviceSpecSystemd.from_dict(obj["systemd"]) if obj.get("systemd") is not None else None,
             "resources": [ResourceMonitor.from_dict(_item) for _item in obj["resources"]] if obj.get("resources") is not None else None,
             "console": DeviceConsole.from_dict(obj["console"]) if obj.get("console") is not None else None

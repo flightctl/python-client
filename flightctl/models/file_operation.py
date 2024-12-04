@@ -20,16 +20,15 @@ from typing_extensions import Self
 
 class FileOperation(str, Enum):
     """
-    The type of operation that was observed on the file.
+    FileOperation
     """
 
     """
     allowed enum values
     """
-    CREATE = 'Create'
-    REMOVE = 'Remove'
-    UPDATE = 'Update'
-    REBOOT = 'Reboot'
+    CREATED = 'created'
+    REMOVED = 'removed'
+    UPDATED = 'updated'
 
     @classmethod
     def from_json(cls, json_str: str) -> Self:

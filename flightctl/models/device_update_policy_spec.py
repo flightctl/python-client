@@ -17,20 +17,19 @@ import pprint
 import re  # noqa: F401
 import json
 
-from pydantic import BaseModel, ConfigDict, Field, StrictInt
-from typing import Any, ClassVar, Dict, List
+from pydantic import BaseModel, ConfigDict, Field
+from typing import Any, ClassVar, Dict, List, Optional
+from flightctl.models.update_schedule import UpdateSchedule
 from typing import Optional, Set
 from typing_extensions import Self
 
-class DevicesSummary(BaseModel):
+class DeviceUpdatePolicySpec(BaseModel):
     """
-    A summary of the devices in the fleet returned when fetching a single Fleet.
+    Specifies the policy for managing device updates, including when updates should be downloaded and applied.
     """ # noqa: E501
-    total: StrictInt = Field(description="The total number of devices in the fleet.")
-    application_status: Dict[str, StrictInt] = Field(description="A breakdown of the devices in the fleet by \"application\" status.", alias="applicationStatus")
-    summary_status: Dict[str, StrictInt] = Field(description="A breakdown of the devices in the fleet by \"summary\" status.", alias="summaryStatus")
-    update_status: Dict[str, StrictInt] = Field(description="A breakdown of the devices in the fleet by \"updated\" status.", alias="updateStatus")
-    __properties: ClassVar[List[str]] = ["total", "applicationStatus", "summaryStatus", "updateStatus"]
+    download_schedule: Optional[UpdateSchedule] = Field(default=None, alias="downloadSchedule")
+    update_schedule: Optional[UpdateSchedule] = Field(default=None, alias="updateSchedule")
+    __properties: ClassVar[List[str]] = ["downloadSchedule", "updateSchedule"]
 
     model_config = ConfigDict(
         populate_by_name=True,
@@ -50,7 +49,7 @@ class DevicesSummary(BaseModel):
 
     @classmethod
     def from_json(cls, json_str: str) -> Optional[Self]:
-        """Create an instance of DevicesSummary from a JSON string"""
+        """Create an instance of DeviceUpdatePolicySpec from a JSON string"""
         return cls.from_dict(json.loads(json_str))
 
     def to_dict(self) -> Dict[str, Any]:
@@ -71,11 +70,17 @@ class DevicesSummary(BaseModel):
             exclude=excluded_fields,
             exclude_none=True,
         )
+        # override the default output from pydantic by calling `to_dict()` of download_schedule
+        if self.download_schedule:
+            _dict['downloadSchedule'] = self.download_schedule.to_dict()
+        # override the default output from pydantic by calling `to_dict()` of update_schedule
+        if self.update_schedule:
+            _dict['updateSchedule'] = self.update_schedule.to_dict()
         return _dict
 
     @classmethod
     def from_dict(cls, obj: Optional[Dict[str, Any]]) -> Optional[Self]:
-        """Create an instance of DevicesSummary from a dict"""
+        """Create an instance of DeviceUpdatePolicySpec from a dict"""
         if obj is None:
             return None
 
@@ -83,10 +88,8 @@ class DevicesSummary(BaseModel):
             return cls.model_validate(obj)
 
         _obj = cls.model_validate({
-            "total": obj.get("total"),
-            "applicationStatus": obj.get("applicationStatus"),
-            "summaryStatus": obj.get("summaryStatus"),
-            "updateStatus": obj.get("updateStatus")
+            "downloadSchedule": UpdateSchedule.from_dict(obj["downloadSchedule"]) if obj.get("downloadSchedule") is not None else None,
+            "updateSchedule": UpdateSchedule.from_dict(obj["updateSchedule"]) if obj.get("updateSchedule") is not None else None
         })
         return _obj
 
