@@ -1,6 +1,6 @@
 # flightctl.RepositoryApi
 
-All URIs are relative to *https://raw.githubusercontent.com*
+All URIs are relative to *http://localhost*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
@@ -29,10 +29,10 @@ from flightctl.models.repository import Repository
 from flightctl.rest import ApiException
 from pprint import pprint
 
-# Defining the host is optional and defaults to https://raw.githubusercontent.com
+# Defining the host is optional and defaults to http://localhost
 # See configuration.py for a list of all supported configuration parameters.
 configuration = flightctl.Configuration(
-    host = "https://raw.githubusercontent.com"
+    host = "http://localhost"
 )
 
 
@@ -99,10 +99,10 @@ from flightctl.models.status import Status
 from flightctl.rest import ApiException
 from pprint import pprint
 
-# Defining the host is optional and defaults to https://raw.githubusercontent.com
+# Defining the host is optional and defaults to http://localhost
 # See configuration.py for a list of all supported configuration parameters.
 configuration = flightctl.Configuration(
-    host = "https://raw.githubusercontent.com"
+    host = "http://localhost"
 )
 
 
@@ -163,10 +163,10 @@ from flightctl.models.repository import Repository
 from flightctl.rest import ApiException
 from pprint import pprint
 
-# Defining the host is optional and defaults to https://raw.githubusercontent.com
+# Defining the host is optional and defaults to http://localhost
 # See configuration.py for a list of all supported configuration parameters.
 configuration = flightctl.Configuration(
-    host = "https://raw.githubusercontent.com"
+    host = "http://localhost"
 )
 
 
@@ -233,10 +233,10 @@ from flightctl.models.sort_order import SortOrder
 from flightctl.rest import ApiException
 from pprint import pprint
 
-# Defining the host is optional and defaults to https://raw.githubusercontent.com
+# Defining the host is optional and defaults to http://localhost
 # See configuration.py for a list of all supported configuration parameters.
 configuration = flightctl.Configuration(
-    host = "https://raw.githubusercontent.com"
+    host = "http://localhost"
 )
 
 
@@ -313,10 +313,10 @@ from flightctl.models.repository import Repository
 from flightctl.rest import ApiException
 from pprint import pprint
 
-# Defining the host is optional and defaults to https://raw.githubusercontent.com
+# Defining the host is optional and defaults to http://localhost
 # See configuration.py for a list of all supported configuration parameters.
 configuration = flightctl.Configuration(
-    host = "https://raw.githubusercontent.com"
+    host = "http://localhost"
 )
 
 
@@ -386,10 +386,10 @@ from flightctl.models.repository import Repository
 from flightctl.rest import ApiException
 from pprint import pprint
 
-# Defining the host is optional and defaults to https://raw.githubusercontent.com
+# Defining the host is optional and defaults to http://localhost
 # See configuration.py for a list of all supported configuration parameters.
 configuration = flightctl.Configuration(
-    host = "https://raw.githubusercontent.com"
+    host = "http://localhost"
 )
 
 
@@ -455,10 +455,10 @@ from flightctl.models.repository import Repository
 from flightctl.rest import ApiException
 from pprint import pprint
 
-# Defining the host is optional and defaults to https://raw.githubusercontent.com
+# Defining the host is optional and defaults to http://localhost
 # See configuration.py for a list of all supported configuration parameters.
 configuration = flightctl.Configuration(
-    host = "https://raw.githubusercontent.com"
+    host = "http://localhost"
 )
 
 
