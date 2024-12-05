@@ -2528,6 +2528,7 @@ components:
         - apiVersion
         - kind
         - metadata
+        - spec
       description: Repository represents a Git repository or an HTTP endpoint
     HttpConfig:
       type: object
@@ -2620,6 +2621,7 @@ components:
         - type
     RepositorySpec:
       type: object
+      nullable: true
       oneOf:
         - $ref: "#/components/schemas/GenericRepoSpec"
         - $ref: "#/components/schemas/HttpRepoSpec"

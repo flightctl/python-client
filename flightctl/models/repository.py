@@ -32,7 +32,7 @@ class Repository(BaseModel):
     api_version: StrictStr = Field(description="APIVersion defines the versioned schema of this representation of an object. Servers should convert recognized schemas to the latest internal value, and may reject unrecognized values. More info: https://git.k8s.io/community/contributors/devel/sig-architecture/api-conventions.md#resources", alias="apiVersion")
     kind: StrictStr = Field(description="Kind is a string value representing the REST resource this object represents. Servers may infer this from the endpoint the client submits requests to. Cannot be updated. In CamelCase. More info: https://git.k8s.io/community/contributors/devel/sig-architecture/api-conventions.md#types-kinds")
     metadata: ObjectMeta
-    spec: Optional[RepositorySpec] = None
+    spec: Optional[RepositorySpec]
     status: Optional[RepositoryStatus] = None
     __properties: ClassVar[List[str]] = ["apiVersion", "kind", "metadata", "spec", "status"]
 
@@ -84,6 +84,11 @@ class Repository(BaseModel):
         # override the default output from pydantic by calling `to_dict()` of status
         if self.status:
             _dict['status'] = self.status.to_dict()
+        # set to None if spec (nullable) is None
+        # and model_fields_set contains the field
+        if self.spec is None and "spec" in self.model_fields_set:
+            _dict['spec'] = None
+
         return _dict
 
     @classmethod
